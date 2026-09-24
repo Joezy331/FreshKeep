@@ -1,0 +1,37 @@
+<view class="fs" wx:if="{{zone}}">
+  <view class="fs-head" bindtap="toggle">
+    <view class="fs-head-left">
+      <view class="fs-emoji">{{zone.emoji}}</view>
+      <view>
+        <view class="fs-name">{{zone.area}}</view>
+        <view class="fs-desc">{{zone.desc}} · {{zone.temp}}</view>
+      </view>
+    </view>
+    <view class="fs-head-right">
+      <view class="fs-count">{{zone.items.length}}</view>
+      <view class="fs-arrow {{open ? 'up' : ''}}">⌄</view>
+    </view>
+  </view>
+
+  <view class="fs-body" wx:if="{{open}}">
+    <view class="fs-empty" wx:if="{{zone.items.length === 0}}">这个区域还是空的</view>
+
+    <view
+      class="fs-item s-{{it.status}}"
+      wx:for="{{list}}"
+      wx:for-item="it"
+      wx:key="id"
+      data-id="{{it.id}}"
+      bindtap="onItem"
+      hover-class="fs-item-hover"
+    >
+      <view class="fs-item-emoji">{{it.emoji}}</view>
+      <view class="fs-item-name">{{it.name}}</view>
+      <view class="fs-item-qty">{{it.quantity}}{{it.unit}}</view>
+    </view>
+
+    <block wx:if="{{zone.items.length === 0}}">
+      <view class="fs-slot" wx:for="{{slots}}" wx:for-item="s" wx:key="*this"></view>
+    </block>
+  </view>
+</view>

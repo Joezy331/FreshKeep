@@ -1,0 +1,12 @@
+<view class="sb {{compact ? 'compact' : ''}}" bindtap="onTap" hover-class="sb-hover">
+  <view class="sb-ring">
+    <text class="sb-emoji">📷</text>
+    <view class="sb-ring-1"></view>
+    <view class="sb-ring-2"></view>
+  </view>
+  <view class="sb-main">
+    <view class="sb-title">{{title}}</view>
+    <view class="sb-sub" wx:if="{{sub}}">{{sub}}</view>
+  </view>
+  <view class="sb-arrow">›</view>
+</view>

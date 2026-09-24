@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>鲜存 FreshKeep · 治愈风设计预览</title>
+<style>
+  :root {
+    --bg: #f4f1e6;
+    --card: #fbf9f2;
+    --card-soft: #faf7ee;
+    --fill: #f0eee1;
+    --fill-soft: #f4f2e7;
+    --ink-900: #3d4a3a;
+    --ink-700: #56614f;
+    --ink-500: #7c846f;
+    --ink-300: #a9ae9d;
+    --ink-100: #cfd2c4;
+    --line: #e6e2d4;
+    --line-strong: #d8d3c0;
+    --brand: #7e8c6a;
+    --brand-dark: #616e50;
+    --brand-soft: #e8ebdf;
+    --brand-soft-2: #f1f2e8;
+    --warn: #c98a48;
+    --warn-soft: #f6ecdd;
+    --danger: #c05b4d;
+    --danger-soft: #f7e7e3;
+    --seal: #c05b4d;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    background: #e9e6da;
+    font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Microsoft YaHei", sans-serif;
+    color: var(--ink-900);
+    padding: 40px 24px 64px;
+    -webkit-font-smoothing: antialiased;
+  }
+  .stage-head { max-width: 900px; margin: 0 auto 32px; }
+  .stage-head h1 { font-size: 24px; letter-spacing: 4px; font-weight: 600; }
+  .stage-head p { margin-top: 12px; font-size: 13px; color: var(--ink-500); line-height: 1.9; }
+  .stage-head code { background: var(--card); padding: 2px 6px; border-radius: 4px; font-size: 12px; color: var(--brand-dark); }
+  .stage { display: flex; gap: 40px; justify-content: center; flex-wrap: wrap; align-items: flex-start; }
+  .frame-wrap { display: flex; flex-direction: column; align-items: center; }
+  .frame-label { margin-bottom: 14px; font-size: 12px; letter-spacing: 3px; color: var(--ink-500); }
+  .phone {
+    width: 375px; height: 780px; border-radius: 38px; background: var(--bg);
+    border: 10px solid #d9d5c6; overflow: hidden; position: relative;
+    box-shadow: 0 18px 44px rgba(61, 74, 58, 0.14);
+  }
+  .screen { width: 100%; height: 100%; overflow: hidden; position: relative; }
+  .scroll { height: 100%; overflow-y: auto; padding: 16px 16px 60px; }
+  .scroll::-webkit-scrollbar { width: 0; }
+
+  /* 通用 */
+  .paper { background: var(--card); border: 1px solid var(--line); border-radius: 14px; box-shadow: 0 3px 10px rgba(61,74,58,.045); }
+  .hairline { height: 1px; background: var(--line); margin: 14px 0; }
+  /* 拉丁注音小字：压在中文标题下方 */
+  .en-sub { font-family: "Times New Roman", Georgia, serif; font-size: 10px; letter-spacing: 3px; color: var(--ink-300); text-transform: uppercase; }
+  /* 衬线中文标题 */
+  .title-rule { width: 28px; height: 1px; background: var(--line-strong); margin-top: 7px; }
+  .seal { display: inline-block; padding: 2px 6px; border: 1px solid var(--seal); border-radius: 3px; color: var(--seal); font-size: 9px; letter-spacing: 1px; line-height: 1.3; }
+  .tile { display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 13px 0 10px; background: var(--fill-soft); border: 1px solid var(--line); border-radius: 10px; }
+  .tile img { width: 28px; height: 28px; }
+  .tile span { margin-top: 7px; font-size: 11px; color: var(--ink-700); letter-spacing: .5px; }
+  .tag { display: inline-flex; align-items: center; height: 20px; padding: 0 8px; border-radius: 999px; font-size: 11px; }
+  .tag-fresh { background: var(--brand-soft); color: var(--brand-dark); }
+  .tag-soon  { background: var(--warn-soft); color: var(--warn); }
+  .dot { width: 5px; height: 5px; border-radius: 50%; }
+  .dot-fresh { background: var(--brand); }
+  .dot-soon { background: var(--warn); }
+  .dot-danger { background: var(--danger); }
+
+  /* ── 开屏页 ─────────────────────────────── */
+  .splash { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; padding-top: 40px; padding-bottom: 110px; box-sizing: border-box; overflow: hidden; position: relative; }
+  .skip { position: absolute; right: 22px; top: 22px; padding: 5px 13px; border: 1px solid var(--line-strong); border-radius: 999px; font-size: 11px; color: var(--ink-500); letter-spacing: 1px; }
+  .hero-illu { width: 210px; height: 210px; animation: float 4.4s ease-in-out infinite; }
+  .splash-brand { margin-top: 12px; display: flex; flex-direction: column; align-items: center; }
+  .splash-brand .row { display: flex; align-items: flex-start; }
+  .splash-cn { font-size: 36px; font-weight: 600; letter-spacing: 8px; margin-left: 8px; }
+  .splash-brand .seal { margin-left: 4px; margin-top: 6px; transform: rotate(6deg); }
+  .splash-en { margin-top: 10px; font-size: 10px; letter-spacing: 4px; }
+  .splash-slogan { margin-top: 24px; font-size: 12px; letter-spacing: 1.5px; color: var(--ink-500); }
+  .splash-motto { margin-top: 9px; font-size: 10px; color: var(--ink-300); letter-spacing: .5px; }
+  .splash-foot { position: absolute; bottom: 44px; display: flex; flex-direction: column; align-items: center; }
+  .bar { position: relative; width: 110px; height: 2px; border-radius: 2px; background: var(--line); }
+  .bar i { display: block; height: 100%; width: 0; background: var(--brand); transition: width .12s linear; }
+  .foot-en { margin-top: 12px; font-size: 9px; letter-spacing: 3px; }
+  @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-5px); } }
+  @keyframes load { from { transform: scaleX(0); transform-origin: left; } to { transform: scaleX(1); transform-origin: left; } }
+
+  /* ── 首页 ──────────────────────────────── */
+  .hero { position: relative; padding: 10px 2px 22px; }
+  .hero-leaf { position: absolute; right: -5px; top: -10px; width: 75px; height: 75px; opacity: .34; }
+  .hero-top { display: flex; justify-content: space-between; align-items: flex-start; }
+  .brand-row { display: flex; align-items: flex-start; }
+  .brand-cn { font-size: 27px; font-weight: 600; letter-spacing: 6px; line-height: 1.15; }
+  .brand-row .seal { margin-left: 5px; margin-top: 5px; transform: rotate(6deg); }
+  .brand-en { margin-top: 5px; }
+  .hero-acts { display: flex; padding-top: 3px; }
+  .act { position: relative; margin-left: 14px; font-size: 12px; color: var(--ink-500); letter-spacing: 1px; }
+  .act i { position: absolute; right: -6px; top: -2px; width: 6px; height: 6px; border-radius: 50%; background: var(--seal); }
+  .hello { margin-top: 22px; font-size: 15px; color: var(--ink-700); }
+  .hello b { font-size: 21px; font-weight: 600; color: var(--brand-dark); margin: 0 2px; }
+  .hero-tip { margin-top: 5px; font-size: 11px; color: var(--ink-300); }
+
+  .capture { padding: 16px; }
+  .capture-head { display: flex; align-items: center; justify-content: space-between; }
+  .capture-title { font-size: 21px; font-weight: 600; letter-spacing: 2.5px; }
+  .capture-en { margin-top: 6px; }
+  .capture-sub { margin-top: 12px; font-size: 11px; color: var(--ink-500); }
+  .badge { width: 66px; height: 66px; border-radius: 50%; background: var(--brand-soft); display: flex; align-items: center; justify-content: center; flex: none; }
+  .badge img { width: 33px; height: 33px; }
+  .tiles { display: flex; justify-content: space-between; }
+  .tiles .tile { width: 23.5%; }
+
+  .stat { margin-top: 14px; padding: 16px; }
+  .stat-head { display: flex; justify-content: space-between; align-items: center; }
+  .stat-title { font-size: 17px; font-weight: 600; letter-spacing: 2px; }
+  .stat-more { font-size: 11px; color: var(--ink-300); }
+  .nums { margin-top: 16px; display: flex; align-items: center; }
+  .num { flex: 1; text-align: center; }
+  .num b { font-size: 26px; font-weight: 600; }
+  .num b.warn { color: var(--warn); }
+  .num span { display: block; margin-top: 5px; font-size: 10px; color: var(--ink-300); }
+  .vline { width: 1px; height: 24px; background: var(--line); }
+  .track { margin-top: 16px; height: 4px; border-radius: 4px; background: var(--fill); display: flex; overflow: hidden; }
+  .track i { display: block; height: 100%; }
+  .legend { margin-top: 10px; display: flex; justify-content: space-between; font-size: 10px; color: var(--ink-500); }
+  .legend div { display: flex; align-items: center; gap: 5px; }
+
+  .sec { margin-top: 26px; }
+  .sec-head { display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 12px; padding: 0 2px; }
+  .sec-title { font-size: 18px; font-weight: 600; letter-spacing: 2.5px; }
+  .sec-en { margin-top: 6px; }
+  .sec-more { font-size: 11px; color: var(--ink-300); }
+
+  .exp { display: flex; align-items: flex-start; gap: 10px; padding: 13px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); border-left: 3px solid var(--warn); box-shadow: 0 3px 10px rgba(61,74,58,.045); margin-bottom: 10px; }
+  .exp-icon { width: 36px; height: 36px; border-radius: 10px; background: var(--warn-soft); display: flex; align-items: center; justify-content: center; font-size: 19px; flex: none; }
+  .exp-main { flex: 1; }
+  .exp-name { font-size: 16px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .exp-name .tag { font-family: -apple-system, "PingFang SC", sans-serif; font-weight: 400; }
+  .exp-left { margin-top: 3px; font-size: 12px; color: var(--warn); }
+  .exp-tip { margin-top: 5px; font-size: 11px; color: var(--ink-500); }
+  .cook { align-self: center; height: 30px; line-height: 30px; padding: 0 13px; border-radius: 999px; background: var(--brand); color: #fff; font-size: 12px; flex: none; }
+
+  .rc { padding: 14px; border-radius: 14px; background: var(--card); border: 1px solid var(--line); box-shadow: 0 3px 10px rgba(61,74,58,.045); margin-bottom: 12px; }
+  .rc-head { display: flex; align-items: center; gap: 10px; }
+  .rc-emoji { width: 40px; height: 40px; border-radius: 12px; background: var(--brand-soft-2); display: flex; align-items: center; justify-content: center; font-size: 21px; }
+  .rc-main { flex: 1; }
+  .rc-name { font-size: 16px; font-weight: 600; letter-spacing: 1px; display: flex; align-items: center; gap: 6px; }
+  .rc-name .tag { font-family: -apple-system, "PingFang SC", sans-serif; font-weight: 400; }
+  .rc-meta { margin-top: 3px; font-size: 10px; color: var(--ink-300); }
+  .rc-score { text-align: right; }
+  .rc-score b { font-size: 22px; font-weight: 600; color: var(--brand-dark); }
+  .rc-score span { font-size: 10px; color: var(--brand-dark); }
+  .rc-score em { display: block; font-style: normal; font-size: 9px; color: var(--ink-300); }
+  .rc-track { margin-top: 10px; height: 3px; border-radius: 3px; background: var(--fill); overflow: hidden; }
+  .rc-track i { display: block; height: 100%; width: 96%; background: var(--brand); }
+  .rc-reason { margin-top: 10px; font-size: 11px; color: var(--ink-500); line-height: 1.7; }
+  .chips { margin-top: 9px; display: flex; gap: 5px; flex-wrap: wrap; }
+  .chip { padding: 3px 8px; border-radius: 999px; font-size: 10px; background: var(--brand-soft); color: var(--brand-dark); }
+  .first { margin-top: 9px; padding-top: 9px; border-top: 1px solid var(--line); font-size: 10px; color: var(--ink-500); display: flex; gap: 6px; }
+  .first b { color: var(--brand-dark); font-weight: 500; }
+
+  .tabbar { position: absolute; left: 0; right: 0; bottom: 0; height: 52px; background: var(--card); border-top: 1px solid var(--line); display: flex; align-items: center; }
+  .tab { flex: 1; display: flex; flex-direction: column; align-items: center; gap: 3px; }
+  .tab img { width: 20px; height: 20px; }
+  .tab span { font-size: 9px; color: var(--ink-300); }
+  .tab.on span { color: var(--brand); }
+  .disclaimer { margin-top: 18px; text-align: center; font-size: 9px; line-height: 1.7; color: var(--ink-300); }
+  /* 开屏：进度条头部的小光点 */
+  .bar-head { position: absolute; top: 50%; width: 5px; height: 5px; margin-left: -2.5px; margin-top: -2.5px; border-radius: 50%; background: var(--brand); box-shadow: 0 0 0 3px rgba(126,140,106,.14); transition: left .12s linear; }
+
+  .notes { max-width: 900px; margin: 40px auto 0; background: var(--card); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+  .notes h2 { font-size: 17px; font-weight: 600; letter-spacing: 3px; margin-bottom: 14px; }
+  .notes ul { list-style: none; font-size: 12px; color: var(--ink-500); line-height: 2; }
+  .notes li::before { content: "—"; margin-right: 8px; color: var(--ink-100); }
+  .notes b { color: var(--brand-dark); font-weight: 600; }
+</style>
+</head>
+<body>
+  <div class="stage-head">
+    <h1>鲜存 FreshKeep · 治愈手绘风</h1>
+    <p>
+      设计预览（静态 HTML），小程序里已按同一套 token 实现：<code>app.wxss</code> 设计变量 ·
+      <code>pages/splash</code> 开屏页 · <code>pages/home</code> 首页。
+      本轮按参考图换掉标题字族：<b>标题保持无衬线 + 拉丁注音小字</b>，开屏加载条新增「蔬菜水果随进度蹦出」动效，并移除了界面上所有大模型/型号字样。
+    </p>
+  </div>
+
+  <div class="stage">
+    <!-- 开屏页 -->
+    <div class="frame-wrap">
+      <div class="frame-label">01 开屏页 SPLASH</div>
+      <div class="phone">
+        <div class="screen">
+          <div class="splash">
+            <div class="skip">跳过</div>
+            <img class="hero-illu" src="../assets/illustration/splash-hero.png" alt="" />
+            <div class="splash-brand">
+              <div class="row">
+                <div class="splash-cn">鲜存</div>
+                <div class="seal">鲜</div>
+              </div>
+              <div class="splash-en en-sub">Fresh Keep</div>
+            </div>
+            <div class="splash-slogan">买回家的每一口新鲜，都不该被忘记</div>
+            <div class="splash-motto">买菜 → 保存 → 管理 → 提醒 → 消耗</div>
+            <div class="splash-foot">
+              <div class="bar">
+                <i id="barFill"></i>
+                <span class="bar-head" id="barHead"></span>
+              </div>
+              <div class="foot-en en-sub">AI Food Keeper</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 首页 -->
+    <div class="frame-wrap">
+      <div class="frame-label">02 首页 HOME</div>
+      <div class="phone">
+        <div class="screen">
+          <div class="scroll">
+            <div class="hero">
+              <img class="hero-leaf" src="../assets/illustration/leaf-deco.png" alt="" />
+              <div class="hero-top">
+                <div>
+                  <div class="brand-row">
+                    <div class="brand-cn">鲜存</div>
+                    <div class="seal">鲜</div>
+                  </div>
+                  <div class="brand-en en-sub">Fresh Keep</div>
+                </div>
+                <div class="hero-acts">
+                  <div class="act">提醒<i></i></div>
+                  <div class="act">设置</div>
+                </div>
+              </div>
+              <div class="hello">早上好，今天冰箱里有 <b>8</b> 种食材</div>
+              <div class="hero-tip">今天优先吃菠菜和豆腐</div>
+            </div>
+
+            <div class="paper capture">
+              <div class="capture-head">
+                <div>
+                  <div class="capture-title">拍照识别食材</div>
+                  <div class="capture-en en-sub">AI Recognition</div>
+                </div>
+                <div class="badge"><img src="../assets/icon/i-camera.png" alt="" /></div>
+              </div>
+              <div class="capture-sub">买菜回来，拍一下就知道怎么放</div>
+              <div class="hairline"></div>
+              <div class="tiles">
+                <div class="tile"><img src="../assets/icon/i-camera.png" alt="" /><span>拍照</span></div>
+                <div class="tile"><img src="../assets/icon/i-album.png" alt="" /><span>相册</span></div>
+                <div class="tile"><img src="../assets/icon/i-pen.png" alt="" /><span>手动</span></div>
+                <div class="tile"><img src="../assets/icon/i-fridge.png" alt="" /><span>冰箱</span></div>
+              </div>
+            </div>
+
+            <div class="paper stat">
+              <div class="stat-head">
+                <div>
+                  <div class="stat-title">今日冰箱状态</div>
+                  <div class="title-rule"></div>
+                </div>
+                <div class="stat-more">全部 ›</div>
+              </div>
+              <div class="nums">
+                <div class="num"><b>8</b><span>种食材</span></div>
+                <div class="vline"></div>
+                <div class="num"><b>19</b><span>件</span></div>
+                <div class="vline"></div>
+                <div class="num"><b class="warn">3</b><span>即将过期</span></div>
+              </div>
+              <div class="track">
+                <i style="width:62%; background:var(--brand);"></i>
+                <i style="width:25%; background:var(--warn);"></i>
+                <i style="width:13%; background:var(--danger);"></i>
+              </div>
+              <div class="legend">
+                <div><span class="dot dot-fresh"></span>新鲜 5</div>
+                <div><span class="dot dot-soon"></span>临期 3</div>
+                <div><span class="dot dot-danger"></span>已过期 0</div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div class="sec-head">
+                <div>
+                  <div class="sec-title">临期提醒</div>
+                  <div class="title-rule"></div>
+                </div>
+                <div class="sec-more">全部 ›</div>
+              </div>
+
+              <div class="exp">
+                <div class="exp-icon">🥬</div>
+                <div class="exp-main">
+                  <div class="exp-name">菠菜 <span class="tag tag-soon">建议尽快食用</span></div>
+                  <div class="exp-left">还剩 1 天</div>
+                  <div class="exp-tip">今天可以用菠菜做菠菜鸡蛋汤</div>
+                </div>
+                <div class="cook">去做饭</div>
+              </div>
+
+              <div class="exp">
+                <div class="exp-icon">🍅</div>
+                <div class="exp-main">
+                  <div class="exp-name">西红柿 <span class="tag tag-soon">即将到期</span></div>
+                  <div class="exp-left">还剩 2 天</div>
+                  <div class="exp-tip">今天可以用西红柿做西红柿炒鸡蛋</div>
+                </div>
+                <div class="cook">去做饭</div>
+              </div>
+            </div>
+
+            <div class="sec">
+              <div class="sec-head">
+                <div>
+                  <div class="sec-title">今天吃什么</div>
+                  <div class="sec-en en-sub">Today's Menu</div>
+                  <div class="title-rule"></div>
+                </div>
+              </div>
+
+              <div class="rc">
+                <div class="rc-head">
+                  <div class="rc-emoji">🍅</div>
+                  <div class="rc-main">
+                    <div class="rc-name">西红柿炒鸡蛋 <span class="tag tag-fresh">无需购买</span></div>
+                    <div class="rc-meta">⭐ · 10 分钟</div>
+                  </div>
+                  <div class="rc-score"><b>96</b><span>%</span><em>匹配度</em></div>
+                </div>
+                <div class="rc-track"><i></i></div>
+                <div class="rc-reason">冰箱里已有 西红柿、鸡蛋、葱，无需额外购买；优先消耗西红柿（还剩 2 天）</div>
+                <div class="chips">
+                  <span class="chip">✓ 西红柿</span>
+                  <span class="chip">✓ 鸡蛋</span>
+                  <span class="chip">✓ 葱</span>
+                </div>
+                <div class="first"><b>优先消耗</b><span>🍅西红柿(还剩2天)</span></div>
+              </div>
+            </div>
+
+            <div class="disclaimer">
+              保存时长为参考值，仅供食材管理使用，实际情况请结合食材状态判断。
+            </div>
+          </div>
+
+          <div class="tabbar">
+            <div class="tab on"><img src="../assets/tabbar/home-active.png" alt="" /><span>首页</span></div>
+            <div class="tab"><img src="../assets/tabbar/fridge.png" alt="" /><span>我的冰箱</span></div>
+            <div class="tab"><img src="../assets/tabbar/recipe.png" alt="" /><span>食谱</span></div>
+            <div class="tab"><img src="../assets/tabbar/profile.png" alt="" /><span>我的</span></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes">
+    <h2>本次改动的排版与内容</h2>
+    <ul>
+      <li><b>字体沿用原有体系</b>：标题保持系统无衬线 + 600 字重，不做衬线改造（上一版已回退）</li>
+      <li><b>拉丁注音小字</b>：中文标题下方保留一行全大写 + 宽字距的罗马字（Fresh Keep / AI Recognition / Today's Menu），用 <code>.fk-en-sub</code></li>
+      <li><b>标题下细线</b>：分区标题下加 56×2rpx 装饰线（<code>.fk-title-rule</code>）</li>
+      <li><b>开屏布局</b>：插画 + 品牌 + 标语整组在屏幕垂直方向居中（下内边距略大，视觉重心稍高于几何中心）</li>
+      <li><b>开屏加载动效</b>：进度条每 60ms 推进一次，条头一个小光点跟随</li>
+      <li><b>移除模型字样</b>：首页底部「ENGINE · OpenCode Zen · nemotron-3-ultra-free」整行删除；扫描页「当前识别引擎：…」删除；AI 连接成功提示不再回显模型 ID</li>
+      <li>覆盖范围：开屏 / 首页 / 冰箱 / 食谱 / 我的 / 拍照识菜 / 确认食材 / 食谱详情 共 18 处标题</li>
+    </ul>
+  </div>
+<script>
+  // 复刻小程序里加载条推进（每 60ms 一次）
+  const fill = document.getElementById('barFill');
+  const head = document.getElementById('barHead');
+  let p = 0;
+  const step = (100 * 60) / 2300;
+  const timer = setInterval(() => {
+    p = Math.min(100, p + step);
+    if (fill) fill.style.width = p + '%';
+    if (head) head.style.left = p + '%';
+    if (p >= 100) clearInterval(timer);
+  }, 60);
+</script>
+</body>
+</html>

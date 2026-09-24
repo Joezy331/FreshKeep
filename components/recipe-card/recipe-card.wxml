@@ -1,0 +1,33 @@
+<view class="rc fk-hover" bindtap="onTap" wx:if="{{item}}">
+  <view class="rc-head">
+    <view class="rc-emoji">{{item.recipe.emoji}}</view>
+    <view class="rc-head-main">
+      <view class="rc-name-row">
+        <text class="rc-name">{{item.recipe.name}}</text>
+        <view class="rc-nobuy" wx:if="{{item.noExtraBuy}}">无需购买</view>
+      </view>
+      <view class="rc-meta">{{stars}} · {{item.recipe.time}} 分钟</view>
+    </view>
+    <view class="rc-score">
+      <text class="rc-score-num">{{item.matchScore}}</text>
+      <text class="rc-score-pct">%</text>
+      <view class="rc-score-label">匹配度</view>
+    </view>
+  </view>
+
+  <view class="rc-bar">
+    <view class="rc-bar-fill" style="width: {{item.matchScore}}%;"></view>
+  </view>
+
+  <view class="rc-reason">{{item.reason}}</view>
+
+  <view class="rc-chips" wx:if="{{detail}}">
+    <view class="chip ok" wx:for="{{matchedList}}" wx:for-item="m" wx:key="name">✓ {{m.name}}</view>
+    <view class="chip miss" wx:for="{{missingList}}" wx:for-item="m" wx:key="name">缺 {{m.name}}</view>
+  </view>
+
+  <view class="rc-first" wx:if="{{useFirstText}}">
+    <text class="rc-first-label">优先消耗</text>
+    <text class="rc-first-text">{{useFirstText}}</text>
+  </view>
+</view>

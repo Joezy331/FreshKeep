@@ -1,0 +1,55 @@
+{
+  "pages": [
+    "pages/splash/splash",
+    "pages/home/home",
+    "pages/fridge/fridge",
+    "pages/recipe/recipe",
+    "pages/profile/profile",
+    "pages/scan/scan",
+    "pages/ingredient/ingredient",
+    "pages/recipe-detail/recipe-detail"
+  ],
+  "window": {
+    "navigationBarBackgroundColor": "#F4F1E6",
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "鲜存 FreshKeep",
+    "backgroundColor": "#F4F1E6",
+    "backgroundTextStyle": "dark",
+    "enablePullDownRefresh": false
+  },
+  "tabBar": {
+    "color": "#A9AE9D",
+    "selectedColor": "#7E8C6A",
+    "backgroundColor": "#FBF9F2",
+    "borderStyle": "white",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "assets/tabbar/home.png",
+        "selectedIconPath": "assets/tabbar/home-active.png"
+      },
+      {
+        "pagePath": "pages/fridge/fridge",
+        "text": "我的冰箱",
+        "iconPath": "assets/tabbar/fridge.png",
+        "selectedIconPath": "assets/tabbar/fridge-active.png"
+      },
+      {
+        "pagePath": "pages/recipe/recipe",
+        "text": "食谱",
+        "iconPath": "assets/tabbar/recipe.png",
+        "selectedIconPath": "assets/tabbar/recipe-active.png"
+      },
+      {
+        "pagePath": "pages/profile/profile",
+        "text": "我的",
+        "iconPath": "assets/tabbar/profile.png",
+        "selectedIconPath": "assets/tabbar/profile-active.png"
+      }
+    ]
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "lazyCodeLoading": "requiredComponents"
+}

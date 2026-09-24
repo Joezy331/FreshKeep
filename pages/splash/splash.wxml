@@ -1,0 +1,42 @@
+<view class="splash {{leaving ? 'out' : ''}}" catchtouchmove="noop">
+
+  <!-- 飘落叶子 -->
+  <image class="leaf l1 fk-drift" src="/assets/illustration/leaf-deco.png" />
+  <image class="leaf l2 fk-drift" src="/assets/illustration/leaf-deco.png" />
+
+  <view class="skip" bindtap="skip">跳过</view>
+
+  <!-- 主插画 -->
+  <view class="hero fk-float">
+    <image class="hero-img" src="/assets/illustration/splash-hero.png" mode="aspectFit" />
+  </view>
+
+  <!-- 品牌 -->
+  <view class="brand fk-rise fk-d1">
+    <view class="brand-line">
+      <view class="brand-cn">鲜存</view>
+      <view class="seal fk-seal">鲜</view>
+    </view>
+    <view class="fk-en-sub brand-en">Fresh Keep</view>
+  </view>
+
+  <view class="slogan fk-rise fk-d2">买回家的每一口新鲜，都不该被忘记</view>
+  <view class="motto fk-rise fk-d3">{{motto}}</view>
+
+  <!-- 底部进度 -->
+  <view class="foot fk-rise fk-d4">
+    <view class="bar">
+      <view class="bar-fill" style="width: {{progress}}%;"></view>
+      <view class="bar-head" style="left: {{progress}}%;"></view>
+    </view>
+
+    <view class="enter" wx:if="{{ready}}" bindtap="skip">直接进入 ›</view>
+
+    <view class="nav-err" wx:if="{{navError}}">
+      {{navError}}
+      <view class="nav-retry" bindtap="retry">重新进入</view>
+    </view>
+
+    <view class="fk-en-sub foot-en">AI Food Keeper</view>
+  </view>
+</view>

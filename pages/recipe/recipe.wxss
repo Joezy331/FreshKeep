@@ -1,0 +1,154 @@
+.page {
+  min-height: 100vh;
+  padding: 32rpx 32rpx calc(60rpx + env(safe-area-inset-bottom));
+}
+
+.hd {
+  padding: 12rpx 4rpx 28rpx;
+}
+
+.hd-title {
+  font-size: 44rpx;
+  font-weight: 600;
+  letter-spacing: -1rpx;
+  color: var(--fk-ink-900);
+}
+
+.hd-sub {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: var(--fk-ink-500);
+}
+
+.hd-warn {
+  color: var(--fk-warn);
+}
+
+.ask {
+  background: var(--fk-card);
+  border-radius: var(--fk-r-lg);
+  box-shadow: var(--fk-shadow-m);
+  padding: 24rpx;
+}
+
+.ask-input-row {
+  display: flex;
+  align-items: center;
+}
+
+.ask-input {
+  flex: 1;
+  height: 72rpx;
+  font-size: 27rpx;
+  color: var(--fk-ink-900);
+}
+
+.ask-ph {
+  color: var(--fk-ink-300);
+}
+
+.ask-send {
+  height: 64rpx;
+  line-height: 64rpx;
+  padding: 0 32rpx;
+  border-radius: var(--fk-r-pill);
+  background: var(--fk-brand);
+  color: #fff;
+  font-size: 25rpx;
+}
+
+.ask-examples {
+  margin-top: 20rpx;
+  white-space: nowrap;
+}
+
+.ex-inner {
+  display: inline-flex;
+}
+
+.ex {
+  padding: 10rpx 22rpx;
+  border-radius: var(--fk-r-pill);
+  background: var(--fk-brand-soft-2);
+  color: var(--fk-brand-dark);
+  font-size: 22rpx;
+  margin-right: 16rpx;
+}
+
+.reply {
+  margin-top: 24rpx;
+  display: flex;
+  align-items: flex-start;
+  padding: 22rpx 26rpx;
+  border-radius: var(--fk-r-md);
+  background: var(--fk-brand-soft-2);
+  border: 2rpx solid var(--fk-brand-soft);
+  animation: fk-fade-up 0.3s ease both;
+}
+
+.reply-badge {
+  width: 40rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 50%;
+  background: var(--fk-brand);
+  color: #fff;
+  font-size: 20rpx;
+  flex-shrink: 0;
+  margin-right: 16rpx;
+}
+
+.reply-main {
+  flex: 1;
+  min-width: 0;
+}
+
+.reply-text {
+  font-size: 24rpx;
+  line-height: 1.7;
+  color: var(--fk-ink-700);
+  white-space: pre-wrap;
+}
+
+.reply-thinking {
+  margin-top: 10rpx;
+  font-size: 20rpx;
+  color: var(--fk-ink-300);
+}
+
+.filters {
+  margin-top: 28rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.f {
+  padding: 12rpx 26rpx;
+  border-radius: var(--fk-r-pill);
+  background: var(--fk-card);
+  color: var(--fk-ink-500);
+  font-size: 23rpx;
+  margin: 0 16rpx 16rpx 0;
+  box-shadow: var(--fk-shadow-s);
+}
+
+.f.on {
+  background: var(--fk-brand);
+  color: #fff;
+}
+
+.f.plain {
+  background: transparent;
+  box-shadow: none;
+  color: var(--fk-ink-300);
+}
+
+.list {
+  margin-top: 12rpx;
+}
+
+.list > recipe-card {
+  display: block;
+  margin-bottom: 24rpx;
+}

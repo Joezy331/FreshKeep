@@ -1,0 +1,95 @@
+<view class="page">
+
+  <view class="hd">
+    <view class="hd-title">食谱</view>
+    <view class="hd-sub">
+      根据冰箱里的 {{kinds}} 种食材生成
+      <text wx:if="{{expiringText}}" class="hd-warn">· {{expiringText}}</text>
+    </view>
+  </view>
+
+  <!-- AI 对话输入 -->
+  <view class="ask">
+    <view class="ask-input-row">
+      <input
+        class="ask-input"
+        placeholder="说说你的要求，如「我今天不想吃辣的」"
+        placeholder-class="ask-ph"
+        value="{{input}}"
+        bindinput="onInput"
+        confirm-type="send"
+        bindconfirm="onSend"
+      />
+      <view class="ask-send" bindtap="onSend">发送</view>
+    </view>
+    <scroll-view scroll-x class="ask-examples">
+      <view class="ex-inner">
+        <view
+          class="ex"
+          wx:for="{{examples}}"
+          wx:for-item="x"
+          wx:key="*this"
+          data-text="{{x}}"
+          bindtap="onExample"
+        >{{x}}</view>
+      </view>
+    </scroll-view>
+  </view>
+
+  <!-- AI 回复 -->
+  <view class="reply" wx:if="{{aiReply}}">
+    <text class="reply-badge">AI</text>
+    <view class="reply-main">
+      <text class="reply-text">{{aiReply}}</text>
+      <view class="reply-thinking" wx:if="{{aiThinking}}">{{aiModel}} 正在生成…</view>
+    </view>
+  </view>
+
+  <!-- 筛选 -->
+  <view class="filters">
+    <view
+      class="f {{active.useExpiring ? 'on' : ''}}"
+      data-key="useExpiring"
+      bindtap="onQuick"
+    >优先消耗临期</view>
+    <view
+      class="f {{active.onlyFridge ? 'on' : ''}}"
+      data-key="onlyFridge"
+      bindtap="onQuick"
+    >只用冰箱里的</view>
+    <view
+      class="f {{active.noSpicy ? 'on' : ''}}"
+      data-key="noSpicy"
+      bindtap="onQuick"
+    >不要辣</view>
+    <view
+      class="f {{active.maxTime === 15 ? 'on' : ''}}"
+      data-key="quick"
+      bindtap="onQuick"
+    >15 分钟内</view>
+    <view class="f plain" wx:if="{{chips.length}}" bindtap="clearAll">清空条件</view>
+  </view>
+
+  <!-- 结果 -->
+  <view class="list" wx:if="{{list.length > 0}}">
+    <recipe-card
+      wx:for="{{list}}"
+      wx:for-item="r"
+      wx:key="index"
+      item="{{r}}"
+      bind:tap="goDetail"
+    />
+  </view>
+
+  <view wx:if="{{list.length === 0 && !loading}}">
+    <empty-state
+      icon="🍳"
+      title="暂时没有匹配的菜谱"
+      desc="试试放宽条件，或者拍张照给冰箱补点食材。"
+      btnText="去添加食材"
+      bind:action="goScan"
+    />
+  </view>
+
+  <view class="fk-disclaimer">菜谱由 AI 根据你冰箱中的食材生成，仅供参考。</view>
+</view>

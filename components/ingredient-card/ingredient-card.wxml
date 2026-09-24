@@ -1,0 +1,23 @@
+<view class="ic fk-hover" bindtap="onTap">
+  <view class="ic-emoji s-{{item.status}}">
+    <text class="ic-emoji-text">{{item.emoji}}</text>
+    <view class="ic-pulse" wx:if="{{item.status === 'urgent' || item.status === 'expired'}}"></view>
+  </view>
+
+  <view class="ic-main">
+    <view class="ic-line1">
+      <text class="ic-name">{{item.name}}</text>
+      <text class="ic-qty">{{qtyText}}</text>
+    </view>
+    <view class="ic-line2">
+      <text class="ic-area">{{item.storageArea}}</text>
+      <text class="ic-dot">·</text>
+      <text class="ic-left t-{{item.status}}">{{leftText}}</text>
+    </view>
+  </view>
+
+  <view class="ic-right">
+    <view class="fk-tag fk-tag-{{item.status}}">{{statusText}}</view>
+    <view class="ic-btn" wx:if="{{action}}" catchtap="onAction">去做饭</view>
+  </view>
+</view>

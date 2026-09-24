@@ -1,0 +1,152 @@
+.rc {
+  background: var(--fk-card);
+  border-radius: var(--fk-r-lg);
+  padding: 28rpx;
+  box-shadow: var(--fk-shadow-m);
+}
+
+.rc-head {
+  display: flex;
+  align-items: center;
+}
+
+.rc-emoji {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: 24rpx;
+  background: var(--fk-brand-soft-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 44rpx;
+  flex-shrink: 0;
+}
+
+.rc-head-main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 20rpx;
+}
+
+.rc-name-row {
+  display: flex;
+  align-items: center;
+}
+
+.rc-name {
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--fk-ink-900);
+  letter-spacing: -0.3rpx;
+}
+
+.rc-nobuy {
+  margin-left: 12rpx;
+  height: 34rpx;
+  line-height: 34rpx;
+  padding: 0 14rpx;
+  border-radius: 999rpx;
+  background: var(--fk-brand-soft);
+  color: var(--fk-brand-dark);
+  font-size: 20rpx;
+}
+
+.rc-meta {
+  margin-top: 8rpx;
+  font-size: 22rpx;
+  color: var(--fk-ink-500);
+}
+
+.rc-score {
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.rc-score-num {
+  font-size: 44rpx;
+  font-weight: 600;
+  color: var(--fk-brand);
+  line-height: 1;
+}
+
+.rc-score-pct {
+  font-size: 22rpx;
+  color: var(--fk-brand);
+  margin-left: 2rpx;
+}
+
+.rc-score-label {
+  font-size: 20rpx;
+  color: var(--fk-ink-300);
+  margin-top: 4rpx;
+}
+
+.rc-bar {
+  margin-top: 20rpx;
+  height: 8rpx;
+  border-radius: 999rpx;
+  background: var(--fk-line);
+  overflow: hidden;
+}
+
+.rc-bar-fill {
+  height: 100%;
+  border-radius: 999rpx;
+  background: linear-gradient(90deg, #7ba98a, #7e8c6a);
+}
+
+.rc-reason {
+  margin-top: 18rpx;
+  font-size: 23rpx;
+  color: var(--fk-ink-500);
+  line-height: 1.6;
+}
+
+.rc-chips {
+  margin-top: 16rpx;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.chip {
+  height: 40rpx;
+  line-height: 40rpx;
+  padding: 0 18rpx;
+  border-radius: 999rpx;
+  font-size: 21rpx;
+  margin: 0 12rpx 12rpx 0;
+}
+
+.chip.ok {
+  background: var(--fk-brand-soft);
+  color: var(--fk-brand-dark);
+}
+
+.chip.miss {
+  background: var(--fk-fill);
+  color: var(--fk-ink-300);
+}
+
+.rc-first {
+  margin-top: 8rpx;
+  padding: 16rpx 20rpx;
+  background: var(--fk-warn-soft);
+  border-radius: var(--fk-r-sm);
+  display: flex;
+  align-items: center;
+}
+
+.rc-first-label {
+  font-size: 20rpx;
+  color: #b7742c;
+  background: var(--fk-card);
+  border-radius: 999rpx;
+  padding: 2rpx 12rpx;
+  margin-right: 14rpx;
+  flex-shrink: 0;
+}
+
+.rc-first-text {
+  font-size: 22rpx;
+  color: #a56a26;
+}

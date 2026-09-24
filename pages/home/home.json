@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "鲜存 FreshKeep",
+  "usingComponents": {
+    "recipe-card": "/components/recipe-card/recipe-card",
+    "expiration-card": "/components/expiration-card/expiration-card"
+  }
+}

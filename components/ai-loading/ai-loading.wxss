@@ -1,0 +1,124 @@
+.mask {
+  position: fixed;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(248, 248, 245, 0.94);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 999;
+}
+
+.box {
+  width: 560rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.scanner {
+  width: 220rpx;
+  height: 220rpx;
+  position: relative;
+}
+
+.frame {
+  position: absolute;
+  inset: 0;
+  border-radius: 32rpx;
+  background: var(--fk-card);
+  box-shadow: 0 12rpx 40rpx rgba(126, 140, 106, 0.16);
+  overflow: hidden;
+}
+
+.line {
+  position: absolute;
+  left: 16rpx;
+  right: 16rpx;
+  top: 0;
+  height: 4rpx;
+  border-radius: 4rpx;
+  background: linear-gradient(90deg, rgba(126, 140, 106, 0), #7e8c6a, rgba(126, 140, 106, 0));
+  animation: fk-scan 1.6s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+.corner {
+  position: absolute;
+  width: 28rpx;
+  height: 28rpx;
+  border-color: var(--fk-brand);
+  border-style: solid;
+  border-width: 0;
+}
+
+.tl {
+  left: 18rpx;
+  top: 18rpx;
+  border-left-width: 4rpx;
+  border-top-width: 4rpx;
+  border-top-left-radius: 8rpx;
+}
+
+.tr {
+  right: 18rpx;
+  top: 18rpx;
+  border-right-width: 4rpx;
+  border-top-width: 4rpx;
+  border-top-right-radius: 8rpx;
+}
+
+.bl {
+  left: 18rpx;
+  bottom: 18rpx;
+  border-left-width: 4rpx;
+  border-bottom-width: 4rpx;
+  border-bottom-left-radius: 8rpx;
+}
+
+.br {
+  right: 18rpx;
+  bottom: 18rpx;
+  border-right-width: 4rpx;
+  border-bottom-width: 4rpx;
+  border-bottom-right-radius: 8rpx;
+}
+
+.glow {
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 50% 50%, rgba(126, 140, 106, 0.1), transparent 70%);
+}
+
+.title {
+  margin-top: 40rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: var(--fk-ink-900);
+  letter-spacing: -0.3rpx;
+}
+
+.sub {
+  margin-top: 10rpx;
+  font-size: 24rpx;
+  color: var(--fk-ink-500);
+}
+
+.steps {
+  margin-top: 36rpx;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.step {
+  font-size: 22rpx;
+  color: var(--fk-ink-300);
+  line-height: 2;
+  transition: color 0.3s ease;
+}
+
+.step.on {
+  color: var(--fk-brand);
+}

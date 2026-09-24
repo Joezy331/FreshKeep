@@ -1,0 +1,137 @@
+<view class="page">
+
+  <!-- AI 识别结果头部 -->
+  <view class="ai-head" wx:if="{{mode === 'confirm'}}">
+    <image wx:if="{{image}}" src="{{image}}" mode="aspectFill" class="ai-img" />
+    <view class="ai-info">
+      <view class="ai-title">发现 {{items.length}} 种食材</view>
+      <view class="ai-sub">请逐个确认后可加入冰箱</view>
+    </view>
+  </view>
+
+  <view class="hd" wx:else>
+    <view class="hd-title">{{title}}</view>
+    <view class="hd-sub">填写食材信息，AI 自动补全保存建议</view>
+  </view>
+
+  <view class="item" wx:for="{{items}}" wx:for-item="it" wx:key="key">
+
+    <!-- 名称 -->
+    <view class="it-head">
+      <view class="it-emoji">{{it.emoji}}</view>
+      <view class="it-head-main">
+        <picker
+          mode="selector"
+          range="{{foodNames}}"
+          value="{{0}}"
+          bindchange="onName"
+          data-idx="{{index}}"
+        >
+          <view class="it-name">
+            {{it.name || '选择食材'}}
+            <text class="it-caret">⌄</text>
+          </view>
+        </picker>
+        <view class="it-conf" wx:if="{{it.confidence > 0}}">
+          识别置信度 {{it.confidence * 100}}%
+        </view>
+      </view>
+    </view>
+
+    <!-- 保存建议 -->
+    <view class="advice">
+      <view class="advice-row">
+        <view class="advice-badge">AI 建议</view>
+        <view class="advice-text">{{it.adviceText}}</view>
+      </view>
+      <view class="advice-tips">{{it.tips}}</view>
+    </view>
+
+    <!-- 表单 -->
+    <view class="form">
+      <view class="row">
+        <view class="label">数量</view>
+        <view class="value">
+          <input
+            class="input"
+            type="digit"
+            value="{{it.quantity}}"
+            bindblur="onQty"
+            data-idx="{{index}}"
+          />
+          <picker
+            mode="selector"
+            range="{{units}}"
+            value="{{0}}"
+            bindchange="onUnit"
+            data-idx="{{index}}"
+          >
+            <view class="unit">{{it.unit}} ⌄</view>
+          </picker>
+        </view>
+      </view>
+
+      <view class="row">
+        <view class="label">购买时间</view>
+        <picker mode="date" value="{{it.purchaseDate}}" bindchange="onPurchase" data-idx="{{index}}">
+          <view class="value-text">{{it.purchaseDate}}</view>
+        </picker>
+      </view>
+
+      <view class="row">
+        <view class="label">保存方式</view>
+        <picker
+          mode="selector"
+          range="{{methods}}"
+          value="{{0}}"
+          bindchange="onMethod"
+          data-idx="{{index}}"
+        >
+          <view class="value-text">{{it.storageMethod}} ⌄</view>
+        </picker>
+      </view>
+
+      <view class="row">
+        <view class="label">存放位置</view>
+        <picker
+          mode="selector"
+          range="{{it.areaOptions}}"
+          value="{{0}}"
+          bindchange="onArea"
+          data-idx="{{index}}"
+        >
+          <view class="value-text">{{it.storageArea}} ⌄</view>
+        </picker>
+      </view>
+
+      <view class="row">
+        <view class="label">最佳食用期</view>
+        <picker mode="date" value="{{it.bestBeforeDate}}" bindchange="onBestBefore" data-idx="{{index}}">
+          <view class="value-text">{{it.bestBeforeDate}}</view>
+        </picker>
+      </view>
+
+      <view class="quick">
+        <view
+          class="qd"
+          wx:for="{{it.quickDays}}"
+          wx:for-item="d"
+          wx:key="*this"
+          data-idx="{{index}}"
+          data-days="{{d}}"
+          bindtap="onQuickDays"
+        >{{d}} 天</view>
+      </view>
+    </view>
+  </view>
+
+  <view class="fk-disclaimer">{{disclaimer}}</view>
+
+  <view class="footer">
+    <view class="fk-btn fk-btn-primary fk-btn-block" bindtap="submit">
+      {{mode === 'edit' ? '保存修改' : '加入我的冰箱'}}
+    </view>
+    <view class="del" wx:if="{{mode === 'edit'}}" bindtap="removeItem">移除该食材</view>
+    <view class="del" wx:if="{{mode === 'confirm'}}" bindtap="rescan">重新识别</view>
+  </view>
+</view>

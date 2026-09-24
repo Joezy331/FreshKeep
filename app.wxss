@@ -1,0 +1,546 @@
+/* ==========================================================================
+   鲜存 FreshKeep · 全局设计系统
+   治愈手绘风：暖米黄底 + 抹茶绿 + 朱红印章 · 细线 / 大留白 / 纸感
+   ========================================================================== */
+
+page {
+  --fk-bg: #f4f1e6;
+  --fk-card: #fbf9f2;
+  --fk-card-soft: #faf7ee;
+
+  /* 填充块（图标格、输入框底、状态条底） */
+  --fk-fill: #f0eee1;
+  --fk-fill-soft: #f4f2e7;
+
+  --fk-ink-900: #3d4a3a;
+  --fk-ink-700: #56614f;
+  --fk-ink-500: #7c846f;
+  --fk-ink-300: #a9ae9d;
+  --fk-ink-100: #cfd2c4;
+
+  --fk-line: #e6e2d4;
+  --fk-line-strong: #d8d3c0;
+
+  --fk-brand: #7e8c6a;
+  --fk-brand-dark: #616e50;
+  --fk-brand-soft: #e8ebdf;
+  --fk-brand-soft-2: #f1f2e8;
+
+  --fk-warn: #c98a48;
+  --fk-warn-soft: #f6ecdd;
+  --fk-danger: #c05b4d;
+  --fk-danger-soft: #f7e7e3;
+  /* 印章红 */
+  --fk-seal: #c05b4d;
+
+
+  --fk-r-lg: 28rpx;
+  --fk-r-md: 20rpx;
+  --fk-r-sm: 14rpx;
+  --fk-r-pill: 999rpx;
+
+  /* 治愈风：极轻阴影，靠细线与留白分隔 */
+  --fk-shadow-s: 0 2rpx 8rpx rgba(61, 74, 58, 0.03);
+  --fk-shadow-m: 0 6rpx 20rpx rgba(61, 74, 58, 0.045);
+  --fk-shadow-l: 0 12rpx 32rpx rgba(61, 74, 58, 0.06);
+
+  background: var(--fk-bg);
+  color: var(--fk-ink-900);
+  font-family: -apple-system, BlinkMacSystemFont, "PingFang SC", "Helvetica Neue",
+    "Hiragino Sans GB", "Microsoft YaHei", sans-serif;
+  font-size: 28rpx;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+view,
+text,
+input,
+textarea,
+scroll-view {
+  box-sizing: border-box;
+}
+
+/* ---------- 布局 ---------- */
+.fk-page {
+  min-height: 100vh;
+  padding: 24rpx 32rpx calc(48rpx + env(safe-area-inset-bottom));
+}
+
+.fk-row {
+  display: flex;
+  align-items: center;
+}
+
+.fk-between {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.fk-col {
+  display: flex;
+  flex-direction: column;
+}
+
+.fk-grow {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ---------- 文字 ---------- */
+.fk-h1 {
+  font-size: 44rpx;
+  font-weight: 600;
+  letter-spacing: -0.5rpx;
+  color: var(--fk-ink-900);
+}
+
+.fk-h2 {
+  font-size: 34rpx;
+  font-weight: 600;
+  letter-spacing: -0.3rpx;
+  color: var(--fk-ink-900);
+}
+
+.fk-h3 {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--fk-ink-900);
+}
+
+.fk-body {
+  font-size: 28rpx;
+  color: var(--fk-ink-700);
+}
+
+.fk-muted {
+  font-size: 24rpx;
+  color: var(--fk-ink-500);
+}
+
+.fk-tiny {
+  font-size: 22rpx;
+  color: var(--fk-ink-300);
+}
+
+.fk-ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+/* ---------- 卡片 ---------- */
+.fk-card {
+  background: var(--fk-card);
+  border-radius: var(--fk-r-lg);
+  box-shadow: var(--fk-shadow-m);
+  padding: 32rpx;
+}
+
+.fk-card-soft {
+  background: var(--fk-card-soft);
+  border: 2rpx solid var(--fk-line);
+  border-radius: var(--fk-r-lg);
+  padding: 28rpx;
+}
+
+.fk-hover {
+  transition: transform 0.18s ease, box-shadow 0.18s ease, opacity 0.18s ease;
+}
+
+.fk-hover:active {
+  transform: scale(0.985);
+  box-shadow: var(--fk-shadow-s);
+}
+
+/* ---------- 分区标题 ---------- */
+.fk-section {
+  margin-top: 40rpx;
+}
+
+.fk-section-title {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--fk-ink-900);
+  letter-spacing: -0.2rpx;
+}
+
+.fk-section-sub {
+  font-size: 24rpx;
+  color: var(--fk-ink-500);
+  margin-top: 6rpx;
+}
+
+/* ---------- 状态标签 ---------- */
+.fk-tag {
+  display: inline-flex;
+  align-items: center;
+  height: 40rpx;
+  padding: 0 16rpx;
+  border-radius: var(--fk-r-pill);
+  font-size: 22rpx;
+  font-weight: 500;
+  line-height: 40rpx;
+}
+
+.fk-tag-fresh {
+  background: var(--fk-brand-soft);
+  color: var(--fk-brand-dark);
+}
+
+.fk-tag-soon {
+  background: var(--fk-warn-soft);
+  color: var(--fk-warn);
+}
+
+.fk-tag-urgent {
+  background: var(--fk-warn-soft);
+  color: #c96f26;
+}
+
+.fk-tag-expired {
+  background: var(--fk-danger-soft);
+  color: var(--fk-danger);
+}
+
+.fk-tag-plain {
+  background: #f2f3ef;
+  color: var(--fk-ink-500);
+}
+
+.fk-tag-brand {
+  background: var(--fk-brand-soft);
+  color: var(--fk-brand-dark);
+}
+
+/* ---------- 按钮 ---------- */
+.fk-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 88rpx;
+  border-radius: var(--fk-r-md);
+  font-size: 30rpx;
+  font-weight: 500;
+  transition: opacity 0.18s ease, transform 0.18s ease;
+}
+
+.fk-btn:active {
+  opacity: 0.86;
+  transform: scale(0.99);
+}
+
+.fk-btn-primary {
+  background: var(--fk-brand);
+  color: #fff;
+  box-shadow: 0 10rpx 24rpx rgba(92, 138, 107, 0.24);
+}
+
+.fk-btn-ghost {
+  background: #ffffff;
+  color: var(--fk-ink-700);
+  border: 2rpx solid var(--fk-line-strong);
+}
+
+.fk-btn-soft {
+  background: var(--fk-brand-soft);
+  color: var(--fk-brand-dark);
+}
+
+.fk-btn-warn {
+  background: var(--fk-warn);
+  color: #fff;
+}
+
+.fk-btn-sm {
+  height: 64rpx;
+  padding: 0 28rpx;
+  font-size: 26rpx;
+  border-radius: var(--fk-r-sm);
+}
+
+.fk-btn-block {
+  width: 100%;
+}
+
+/* ---------- 圆点 ---------- */
+.fk-dot {
+  width: 12rpx;
+  height: 12rpx;
+  border-radius: 50%;
+  background: var(--fk-brand);
+}
+
+.fk-dot-warn {
+  background: var(--fk-warn);
+}
+
+.fk-dot-danger {
+  background: var(--fk-danger);
+}
+
+/* ---------- 分割线 ---------- */
+.fk-divider {
+  height: 2rpx;
+  background: var(--fk-line);
+  margin: 24rpx 0;
+}
+
+/* ---------- 免责声明 ---------- */
+.fk-disclaimer {
+  font-size: 20rpx;
+  line-height: 1.6;
+  color: var(--fk-ink-300);
+  text-align: center;
+  padding: 8rpx 24rpx;
+}
+
+/* ---------- 动画 ---------- */
+@keyframes fk-fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fk-anim-up {
+  animation: fk-fade-up 0.36s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+@keyframes fk-breathe {
+  0%,
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.55;
+    transform: scale(1.25);
+  }
+}
+
+@keyframes fk-scan {
+  0% {
+    transform: translateY(6rpx);
+  }
+  100% {
+    transform: translateY(214rpx);
+  }
+}
+
+@keyframes fk-scan-lg {
+  0% {
+    transform: translateY(6rpx);
+  }
+  100% {
+    transform: translateY(454rpx);
+  }
+}
+
+@keyframes fk-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   治愈手绘风 · 组件级样式
+   ========================================================================== */
+
+/* 纸感卡片：靠细线 + 极轻阴影分层，不用重投影 */
+.fk-paper {
+  background: var(--fk-card);
+  border: 2rpx solid var(--fk-line);
+  border-radius: var(--fk-r-lg);
+  box-shadow: var(--fk-shadow-m);
+}
+
+.fk-paper-flat {
+  background: var(--fk-card-soft);
+  border: 2rpx solid var(--fk-line);
+  border-radius: var(--fk-r-lg);
+}
+
+/* 印章式小标签 */
+.fk-seal {
+  display: inline-block;
+  padding: 4rpx 12rpx;
+  border: 2rpx solid var(--fk-seal);
+  border-radius: 6rpx;
+  color: var(--fk-seal);
+  font-size: 18rpx;
+  letter-spacing: 2rpx;
+  line-height: 1.3;
+}
+
+/* 小字注音 / eyebrow：疏字距的罗马字 */
+.fk-eyebrow {
+  font-size: 20rpx;
+  letter-spacing: 4rpx;
+  color: var(--fk-ink-300);
+  text-transform: uppercase;
+}
+
+/* 拉丁注音小字：压在中文标题正下方（参考 PICK UP / ABOUT US 的排法） */
+.fk-en-sub {
+  font-size: 19rpx;
+  letter-spacing: 5rpx;
+  color: var(--fk-ink-300);
+  text-transform: uppercase;
+  font-family: "Times New Roman", Georgia, serif;
+}
+
+/* 中文标题：稍大字距，别太满 */
+.fk-cn-title {
+  font-size: 40rpx;
+  font-weight: 600;
+  letter-spacing: 6rpx;
+  color: var(--fk-ink-900);
+}
+
+/* 分区标题下的极细短装饰线（参考 ABOUT US 下方的那根线） */
+.fk-title-rule {
+  width: 56rpx;
+  height: 2rpx;
+  background: var(--fk-line-strong);
+  margin-top: 12rpx;
+}
+
+/* 细竖线分隔（参考 自提 ｜ 外卖） */
+.fk-vrule {
+  width: 2rpx;
+  height: 28rpx;
+  background: var(--fk-line-strong);
+}
+
+/* 极细分割线 */
+.fk-hairline {
+  height: 2rpx;
+  background: var(--fk-line);
+  margin: 24rpx 0;
+}
+
+/* 竖排细装饰线（朱红） */
+.fk-rule-seal {
+  width: 6rpx;
+  border-radius: 6rpx;
+  background: var(--fk-seal);
+}
+
+/* 图标格：线稿图标 + 中文小字 */
+.fk-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 26rpx 0 20rpx;
+  background: var(--fk-fill-soft);
+  border: 2rpx solid var(--fk-line);
+  border-radius: var(--fk-r-md);
+  transition: transform 0.18s ease, background 0.18s ease;
+}
+
+.fk-tile:active {
+  transform: scale(0.96);
+  background: var(--fk-brand-soft);
+}
+
+.fk-tile-icon {
+  width: 56rpx;
+  height: 56rpx;
+}
+
+.fk-tile-text {
+  margin-top: 14rpx;
+  font-size: 22rpx;
+  color: var(--fk-ink-700);
+  letter-spacing: 1rpx;
+}
+
+/* 治愈风动效 */
+@keyframes fk-float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10rpx);
+  }
+}
+
+.fk-float {
+  animation: fk-float 4.4s ease-in-out infinite;
+}
+
+@keyframes fk-drift {
+  0% {
+    transform: translate3d(0, -20rpx, 0) rotate(0deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.75;
+  }
+  100% {
+    transform: translate3d(-40rpx, 260rpx, 0) rotate(48deg);
+    opacity: 0;
+  }
+}
+
+.fk-drift {
+  animation: fk-drift 9s linear infinite;
+}
+
+@keyframes fk-rise {
+  from {
+    opacity: 0;
+    transform: translateY(24rpx);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fk-rise {
+  animation: fk-rise 0.62s cubic-bezier(0.22, 0.61, 0.36, 1) both;
+}
+
+.fk-d1 {
+  animation-delay: 0.06s;
+}
+
+.fk-d2 {
+  animation-delay: 0.14s;
+}
+
+.fk-d3 {
+  animation-delay: 0.22s;
+}
+
+.fk-d4 {
+  animation-delay: 0.3s;
+}
+
+.fk-d5 {
+  animation-delay: 0.38s;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fk-float,
+  .fk-drift,
+  .fk-rise {
+    animation: none !important;
+  }
+}
+
+/* 隐藏滚动条 */
+::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+  color: transparent;
+}

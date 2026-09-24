@@ -1,0 +1,94 @@
+<view class="page" wx:if="{{rec}}">
+
+  <!-- 头部 -->
+  <view class="hero">
+    <view class="hero-emoji">{{rec.recipe.emoji}}</view>
+    <view class="hero-main">
+      <view class="hero-name">{{rec.recipe.name}}</view>
+      <view class="hero-desc">{{rec.recipe.desc}}</view>
+      <view class="hero-meta">
+        <text class="hm">难度 {{stars}}</text>
+        <text class="hm">⏱ {{rec.recipe.time}} 分钟</text>
+        <text class="hm">匹配度 {{rec.matchScore}}%</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- 匹配度 -->
+  <view class="card">
+    <view class="card-title">食材匹配</view>
+    <view class="bar">
+      <view class="bar-fill" style="width: {{rec.matchScore}}%;"></view>
+    </view>
+    <view class="bar-tip">{{rec.reason}}</view>
+
+    <view class="uf" wx:if="{{useFirst.length > 0}}">
+      <view class="uf-label">优先消耗</view>
+      <view class="uf-list">
+        <view class="uf-item" wx:for="{{useFirst}}" wx:for-item="u" wx:key="name">
+          <text class="uf-emoji">{{u.emoji}}</text>
+          <text class="uf-name">{{u.name}}</text>
+          <text class="uf-days">{{u.daysLeft < 0 ? '已过期' : '还剩 ' + u.daysLeft + '天'}}</text>
+        </view>
+      </view>
+    </view>
+  </view>
+
+  <!-- 食材 -->
+  <view class="card">
+    <view class="card-title">食材清单</view>
+    <view class="ing" wx:for="{{rows}}" wx:for-item="g" wx:key="name">
+      <view class="ing-check {{g.have ? 'ok' : 'no'}}">{{g.have ? '✓' : '○'}}</view>
+      <view class="ing-name">{{g.name}}</view>
+      <view class="ing-amount">{{g.amount}}</view>
+      <view class="ing-tail">
+        <text wx:if="{{g.pantry}}" class="fk-tag fk-tag-plain">常备</text>
+        <text wx:elif="{{g.optional}}" class="fk-tag fk-tag-plain">可选</text>
+        <text wx:elif="{{g.have}}" class="fk-tag fk-tag-fresh">冰箱已有</text>
+        <text wx:else class="fk-tag fk-tag-soon">需购买</text>
+      </view>
+    </view>
+    <view class="to-fridge" bindtap="goFridge">看看冰箱里还有什么 ›</view>
+  </view>
+
+  <!-- 步骤 -->
+  <view class="card">
+    <view class="card-title">做法步骤</view>
+    <view class="step" wx:for="{{steps}}" wx:for-item="s" wx:key="no">
+      <view class="step-no">{{s.no}}</view>
+      <view class="step-text">{{s.text}}</view>
+    </view>
+  </view>
+
+  <view class="fk-disclaimer">菜谱内容与保存建议均为参考信息，请结合实际情况操作。</view>
+
+  <view class="footer">
+    <view class="fk-btn fk-btn-primary fk-btn-block" bindtap="openCook">开始烹饪</view>
+  </view>
+</view>
+
+<!-- 烹饪完成 · 消耗食材 -->
+<view class="mask" wx:if="{{showCook}}" bindtap="closeCook">
+  <view class="sheet" catchtap="noop">
+    <view class="sheet-bar"></view>
+    <view class="sheet-title">烹饪完成，消耗了哪些食材？</view>
+    <view class="sheet-sub">勾选后会从冰箱中扣减或移除</view>
+
+    <view class="cl">
+      <view
+        class="cl-item {{c.checked ? 'on' : ''}}"
+        wx:for="{{consumeList}}"
+        wx:for-item="c"
+        wx:key="id"
+        data-idx="{{index}}"
+        bindtap="toggleConsume"
+      >
+        <text class="cl-emoji">{{c.emoji}}</text>
+        <text class="cl-name">{{c.name}}</text>
+        <text class="cl-qty">{{c.quantity}}{{c.unit}}</text>
+      </view>
+    </view>
+
+    <view class="fk-btn fk-btn-primary fk-btn-block" bindtap="confirmCook">确认消耗</view>
+  </view>
+</view>

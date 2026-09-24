@@ -1,0 +1,136 @@
+.fs {
+  border-radius: var(--fk-r-lg);
+  background: var(--fk-card);
+  box-shadow: var(--fk-shadow-m);
+  overflow: hidden;
+}
+
+.fs-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 26rpx 28rpx;
+  background: linear-gradient(180deg, var(--fk-card-soft), var(--fk-card));
+}
+
+.fs-head-left {
+  display: flex;
+  align-items: center;
+}
+
+.fs-emoji {
+  width: 64rpx;
+  height: 64rpx;
+  border-radius: 18rpx;
+  background: var(--fk-brand-soft-2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32rpx;
+  margin-right: 20rpx;
+}
+
+.fs-name {
+  font-size: 29rpx;
+  font-weight: 600;
+  color: var(--fk-ink-900);
+}
+
+.fs-desc {
+  margin-top: 4rpx;
+  font-size: 21rpx;
+  color: var(--fk-ink-300);
+}
+
+.fs-head-right {
+  display: flex;
+  align-items: center;
+}
+
+.fs-count {
+  min-width: 44rpx;
+  height: 44rpx;
+  line-height: 44rpx;
+  text-align: center;
+  border-radius: 999rpx;
+  background: var(--fk-fill);
+  font-size: 22rpx;
+  color: var(--fk-ink-500);
+}
+
+.fs-arrow {
+  margin-left: 14rpx;
+  font-size: 32rpx;
+  color: var(--fk-ink-300);
+  transition: transform 0.2s ease;
+}
+
+.fs-arrow.up {
+  transform: rotate(180deg);
+}
+
+.fs-body {
+  padding: 20rpx 24rpx 28rpx;
+  display: flex;
+  flex-wrap: wrap;
+  border-top: 2rpx solid var(--fk-line);
+}
+
+.fs-empty {
+  width: 100%;
+  text-align: center;
+  font-size: 22rpx;
+  color: var(--fk-ink-300);
+  padding: 18rpx 0;
+}
+
+.fs-item {
+  width: 31%;
+  margin: 1%;
+  padding: 20rpx 8rpx;
+  border-radius: var(--fk-r-sm);
+  background: var(--fk-fill-soft);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.16s ease;
+}
+
+.fs-item-hover {
+  transform: scale(0.96);
+}
+
+.fs-item.s-soon,
+.fs-item.s-urgent {
+  background: var(--fk-warn-soft);
+}
+
+.fs-item.s-expired {
+  background: var(--fk-danger-soft);
+}
+
+.fs-item-emoji {
+  font-size: 48rpx;
+  line-height: 1.1;
+}
+
+.fs-item-name {
+  margin-top: 8rpx;
+  font-size: 23rpx;
+  color: var(--fk-ink-700);
+  font-weight: 500;
+}
+
+.fs-item-qty {
+  margin-top: 2rpx;
+  font-size: 19rpx;
+  color: var(--fk-ink-300);
+}
+
+.fs-slot {
+  width: 31%;
+  margin: 1%;
+  height: 150rpx;
+  border-radius: var(--fk-r-sm);
+  border: 2rpx dashed var(--fk-line-strong);
+}

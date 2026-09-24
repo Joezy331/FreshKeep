@@ -1,0 +1,93 @@
+.ec {
+  display: flex;
+  align-items: flex-start;
+  padding: 26rpx;
+  border-radius: var(--fk-r-md);
+  background: var(--fk-card);
+  box-shadow: var(--fk-shadow-s);
+  border-left: 6rpx solid var(--fk-warn);
+}
+
+.ec-icon {
+  position: relative;
+  width: 72rpx;
+  height: 72rpx;
+  border-radius: 20rpx;
+  background: var(--fk-warn-soft);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ec-icon.s-expired {
+  background: var(--fk-danger-soft);
+}
+
+.ec-icon-text {
+  font-size: 38rpx;
+  line-height: 1;
+}
+
+.ec-pulse {
+  position: absolute;
+  right: -2rpx;
+  top: -2rpx;
+  width: 14rpx;
+  height: 14rpx;
+  border-radius: 50%;
+  background: var(--fk-warn);
+  animation: fk-breathe 1.8s ease-in-out infinite;
+}
+
+.ec-main {
+  flex: 1;
+  min-width: 0;
+  margin-left: 20rpx;
+}
+
+.ec-title {
+  display: flex;
+  align-items: center;
+}
+
+.ec-name {
+  font-size: 30rpx;
+  font-weight: 600;
+  color: var(--fk-ink-900);
+}
+
+.ec-tag {
+  margin-left: 12rpx;
+}
+
+.ec-left {
+  margin-top: 6rpx;
+  font-size: 24rpx;
+  color: var(--fk-warn);
+  font-weight: 500;
+}
+
+.ec-tip {
+  margin-top: 10rpx;
+  font-size: 22rpx;
+  color: var(--fk-ink-500);
+  line-height: 1.6;
+}
+
+.ec-tip.danger {
+  color: var(--fk-danger);
+}
+
+.ec-btn {
+  flex-shrink: 0;
+  height: 60rpx;
+  line-height: 60rpx;
+  padding: 0 26rpx;
+  border-radius: 999rpx;
+  background: var(--fk-brand);
+  color: #fff;
+  font-size: 24rpx;
+  font-weight: 500;
+  align-self: center;
+}

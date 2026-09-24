@@ -1,0 +1,23 @@
+<view class="mask" wx:if="{{visible}}">
+  <view class="box">
+    <view class="scanner">
+      <view class="frame">
+        <view class="line"></view>
+        <view class="corner tl"></view>
+        <view class="corner tr"></view>
+        <view class="corner bl"></view>
+        <view class="corner br"></view>
+        <view class="glow"></view>
+      </view>
+    </view>
+    <view class="title">{{text}}</view>
+    <view class="sub">{{sub}}</view>
+    <view class="steps">
+      <view
+        class="step {{active >= item.key ? 'on' : ''}}"
+        wx:for="{{steps}}"
+        wx:key="key"
+      >{{item.label}}</view>
+    </view>
+  </view>
+</view>
