@@ -30,28 +30,39 @@ export interface AiConfig {
 }
 
 /**
- * 默认配置：接入 OpenRouter 的 **Muse Spark 1.3**（支持图片输入，上下文 1M）。
+ * 默认配置：接入本地 Cline 网关（OpenAI 兼容，http://localhost:8787/v1）。
  * ⚠️ 安全：apiKey 默认留空，真实 Key 由管理员在「我的 → AI 引擎」界面填写（存本地），
  *    绝不写死在客户端代码里。正式上线请改为自建服务端 / 云函数中转。
+ * ⚠️ 本地网关：localhost 仅在开发者工具 / 真机调试生效，且开发者工具需勾选
+ *    「不校验合法域名、TLS 版本以及 HTTPS 证书」才能请求。
  */
 export const DEFAULT_AI_CONFIG: AiConfig = {
   provider: 'opencode',
-  baseUrl: 'https://openrouter.ai/api/v1',
+  baseUrl: 'http://localhost:8787/v1',
   apiKey: '',
-  model: 'meta/muse-spark-1.3-contributor',
+  model: 'cline-free/muse-spark-1.3-contributor',
   fallbackToMock: true,
   timeout: 25000,
-  version: 2
+  version: 3
 }
 
 /** 网关地址预设（都是 OpenAI 兼容协议，可互相切换） */
 export const BASE_PRESETS = [
-  { url: 'https://openrouter.ai/api/v1', label: 'OpenRouter' },
-  { url: 'https://opencode.ai/zen/v1', label: 'OpenCode Zen' }
+  { url: 'http://localhost:8787/v1', label: 'Local Cline（本地）' },
+  { url: 'https://opencode.ai/zen/v1', label: 'OpenCode Zen' },
+  { url: 'https://openrouter.ai/api/v1', label: 'OpenRouter' }
 ]
 
-/** 常用模型速查（实测于 2026-09，价格与可用性以网关为准） */
+/**
+ * 常用模型速查（实测于 2026-09，价格与可用性以网关为准）
+ * - cline-free/* 为本地 Cline 网关提供的免费模型命名空间
+ */
 export const PRESET_MODELS = [
+  { id: 'cline-free/minimax-m3.1-flash', label: 'MiniMax M3.1 Flash · 免费', free: true },
+  { id: 'cline-free/nemotron-3.5-super-vl', label: 'Nemotron 3.5 Super VL · 免费 · 支持图片', free: true },
+  { id: 'cline-free/mimo-v2.6-flash', label: 'MiMo V2.6 Flash · 免费', free: true },
+  { id: 'cline-free/muse-spark-1.3-contributor', label: 'Muse Spark 1.3 Contributor · 免费 · 支持图片', free: true },
+  { id: 'cline-free/solar-mini4', label: 'Solar Mini 4 · 免费', free: true },
   { id: 'meta/muse-spark-1.3-contributor', label: 'Muse Spark 1.3 Contributor · 支持图片', free: false },
   { id: 'meta/muse-spark-1.3', label: 'Muse Spark 1.3 · 支持图片', free: false },
   { id: 'inclusionai/ling-3.0-flash-vl:free', label: 'Ling 3.0 Flash VL · 免费 · 支持图片', free: true },

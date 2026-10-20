@@ -110,17 +110,18 @@ Page({
       ai,
       aiStatus:
         p === 'opencode'
-          ? '已切换到 OpenCode Zen，填写 API Key 后点「测试连接」'
+          ? '已切换到在线模型，填写 API Key 后点「测试连接」'
           : '已切换为本地 Mock 识别，离线可演示'
     })
     track('recipe_filter_applied', { ai_provider: p })
   },
 
-  /** 复制 OpenCode Zen 官网地址，方便去浏览器创建 Key */
+  /** 复制当前网关地址，方便去浏览器打开 / 查看文档 */
   copyZenUrl() {
+    const url = (getAiConfig().baseUrl || 'http://localhost:8787/v1')
     wx.setClipboardData({
-      data: 'https://opencode.ai/zen',
-      success: () => toast('已复制官网地址，去浏览器打开')
+      data: url,
+      success: () => toast('已复制网关地址：' + url)
     })
   },
 
