@@ -1,0 +1,39 @@
+{
+  "generatedAt": "2026-10-19T10:12:13.608Z",
+  "command": "node --experimental-strip-types --import ./tools/hooks.mjs tools/product-evidence-tests.mjs",
+  "environment": {
+    "node": "v22.22.2",
+    "platform": "win32",
+    "arch": "x64",
+    "cwd": "E:\\codex_projects\\Freshkeep"
+  },
+  "suites": {
+    "storage": {
+      "type": "unit",
+      "pass": 26,
+      "fail": 0,
+      "total": 26
+    },
+    "recipe": {
+      "type": "unit",
+      "pass": 20,
+      "fail": 0,
+      "total": 20
+    },
+    "reminder": {
+      "type": "unit",
+      "pass": 5,
+      "fail": 0,
+      "total": 5
+    },
+    "recognition": {
+      "type": "real-api",
+      "pass": 0,
+      "fail": 0,
+      "total": 0,
+      "executed": false,
+      "reason": "no-baidu-key"
+    }
+  },
+  "note": "保鲜/菜谱/提醒为真实执行项目模块的逻辑层单元测试；百度识别为真实 API 调用，因缺密钥未执行。"
+}

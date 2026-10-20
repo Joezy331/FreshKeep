@@ -1,0 +1,18 @@
+﻿# ⚠️ 模拟数据，仅用于演示看板，非真实用户行为，不得写入简历或对外号称真实指标。
+# 字段: date, app_open, recognition_started, recognition_succeeded, ingredient_added, recipe_viewed, recipe_clicked, ingredient_consumed, expiry_reminder_shown, expiry_reminder_clicked
+date,app_open,recognition_started,recognition_succeeded,ingredient_added,recipe_viewed,recipe_clicked,ingredient_consumed,expiry_reminder_shown,expiry_reminder_clicked
+2026-09-20,42,18,15,12,20,7,9,5,2
+2026-09-21,38,16,14,11,18,6,8,6,3
+2026-09-22,45,20,17,13,22,8,10,4,1
+2026-09-23,40,17,15,12,19,7,9,7,2
+2026-09-24,52,22,19,15,25,9,12,8,3
+2026-09-25,60,26,22,18,28,11,14,9,4
+2026-09-26,55,24,20,16,26,10,13,10,5
+2026-09-27,48,21,18,14,23,8,11,6,2
+2026-09-28,44,19,16,12,21,7,10,7,3
+2026-09-29,50,22,19,15,24,9,12,5,2
+2026-09-30,58,25,21,17,27,10,13,8,4
+2026-10-01,63,27,23,19,30,12,15,9,5
+2026-10-02,61,26,22,18,29,11,14,10,4
+2026-10-03,57,24,21,16,26,9,13,6,2
+2026-10-04,54,23,20,15,25,10,12,8,3

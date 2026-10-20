@@ -3,7 +3,7 @@ import { FRIDGE_ZONES } from '../../data/food-database'
 import { findFood } from '../../data/food-database'
 import { today } from '../../utils/date'
 import { withStatus, computeStats, computeStatus, sortByUrgency, type FridgeStats } from './expiration'
-import { getStorageAdvice, calcBestBeforeFix } from './storage-advice'
+import { getStorageAdvice, calcBestBeforeFix, defaultAreaForMethod } from './storage-advice'
 import type { Ingredient, StorageArea } from '../../types/ingredient'
 
 /** 读取全部食材（带运行时状态） */
@@ -35,6 +35,10 @@ export function addIngredient(input: AddIngredientInput): Ingredient {
   const food = findFood(input.name)
   const advice = getStorageAdvice(input.name, input.storageMethod)
   const method = input.storageMethod || advice.method
+
+  // 批次语义：同一食材每次录入 = 一个新批次（独立 id / 购买日期 / 数量 / 到期日 / 状态），
+  // 由 UI 按名称聚合展示；此处**不做同名合并**，否则会覆盖历史批次、导致日期与数量错乱。
+  // 详见 docs/product-evidence/optimization_audit.md「批次独立性」。
   const item: Ingredient = {
     id: genId('ing'),
     name: input.name,
@@ -64,7 +68,25 @@ export function updateIngredient(id: string, patch: Partial<Ingredient>): Ingred
   const list = get<Ingredient[]>(KEYS.INGREDIENTS, [])
   const idx = list.findIndex((i) => i.id === id)
   if (idx < 0) return null
-  list[idx] = { ...list[idx], ...patch }
+  const cur = list[idx]
+  const next: Ingredient = { ...cur, ...patch }
+  const baseProvided = patch.bestBeforeDate !== undefined
+
+  // D1: 修改购买日期 → 按参考保存天数重算最佳食用期（显式给了 bestBeforeDate 则尊重）
+  if (patch.purchaseDate && !baseProvided) {
+    const advice = getStorageAdvice(next.name, next.storageMethod)
+    next.bestBeforeDate = calcBestBeforeFix(patch.purchaseDate || today(), advice.days)
+  }
+  // D2: 修改保存方式 → 同步分区；若未显式给最佳食用期，则按新方式天数重算
+  if (patch.storageMethod) {
+    next.storageArea = defaultAreaForMethod(next.name, patch.storageMethod)
+    if (!baseProvided) {
+      const advice = getStorageAdvice(next.name, patch.storageMethod)
+      const base = patch.purchaseDate || cur.purchaseDate || today()
+      next.bestBeforeDate = calcBestBeforeFix(base, advice.days)
+    }
+  }
+  list[idx] = next
   persist(list)
   return list[idx]
 }

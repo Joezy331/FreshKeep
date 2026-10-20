@@ -1,0 +1,8 @@
+
+=== 测试结果 ===
+保鲜/临期规则: 通过 26 / 失败 0 / 共 26（单元测试，真实模块）
+菜谱推荐:     通过 20 / 失败 0 / 共 20（单元测试，真实模块）
+临期提醒:     通过 5 / 失败 0 / 共 5（逻辑层，未接入订阅消息）
+识别测试:     未执行（缺密钥，真实 API 未验证）
+CSV + test_run_meta.json 已写出至 E:\codex_projects\Freshkeep\docs\product-evidence
+EVIDENCE TESTS DONE ✅

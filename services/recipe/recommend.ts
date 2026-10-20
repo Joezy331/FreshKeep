@@ -1,4 +1,5 @@
 import { RECIPE_DATABASE } from '../../data/recipe-database'
+import { findFood } from '../../data/food-database'
 import { daysLeftText } from '../../utils/date'
 import type { Ingredient } from '../../types/ingredient'
 import type { Recipe, RecipeRecommendation } from '../../types/recipe'
@@ -42,11 +43,12 @@ export function recommendRecipes(
 ): RecipeRecommendation[] {
   const { maxTime, noSpicy, onlyFridge, useExpiring, keyword, limit, favoriteIds = [] } = options
 
-  // 冰箱食材索引：同名取最接近过期的那条
+  // 冰箱食材索引：同名取最接近过期的那条（D3: 别名归一，番茄→西红柿）
   const fridgeMap: Record<string, Ingredient> = {}
   fridge.forEach((i) => {
-    const exist = fridgeMap[i.name]
-    if (!exist || (i.daysLeft ?? 99) < (exist.daysLeft ?? 99)) fridgeMap[i.name] = i
+    const canon = (findFood(i.name)?.name || i.name).trim()
+    const exist = fridgeMap[canon]
+    if (!exist || (i.daysLeft ?? 99) < (exist.daysLeft ?? 99)) fridgeMap[canon] = i
   })
 
   const list: RecipeRecommendation[] = []
