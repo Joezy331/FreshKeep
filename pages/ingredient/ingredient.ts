@@ -190,9 +190,9 @@ Page({
 
     // 识别候选相关埋点（仅确认流程）
     if ((this as any).data.mode === 'confirm') {
-      track('recognition_candidate_selected', { from: 'confirm', chosen })
+      track('ingredient_candidate_selected', { from: 'confirm', chosen })
       if (chosen !== original) {
-        track('recognition_name_corrected', {
+        track('ingredient_name_corrected', {
           from: 'confirm',
           original,
           corrected: chosen
@@ -313,7 +313,7 @@ Page({
     })
 
     if (mode === 'confirm') {
-      track('recognition_added_to_inventory', {
+      track('ingredient_added_to_inventory', {
         count: valid.length,
         fallback: (this as any).data.fallback
       })

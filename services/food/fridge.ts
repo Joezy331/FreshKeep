@@ -1,4 +1,5 @@
 import { get, set, KEYS, genId } from '../../utils/storage'
+import { track } from '../../utils/analytics'
 import { FRIDGE_ZONES } from '../../data/food-database'
 import { findFood } from '../../data/food-database'
 import { today } from '../../utils/date'
@@ -112,6 +113,13 @@ export function consumeIngredient(id: string, amount?: number): number {
     list[idx] = { ...item, quantity: left }
   }
   persist(list)
+  track('ingredient_consumed', {
+    id,
+    name: item.name,
+    used,
+    left: Math.max(0, left),
+    data_source: 'synthetic_test'
+  })
   return Math.max(0, left)
 }
 

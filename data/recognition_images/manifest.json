@@ -1,0 +1,188 @@
+{
+  "generated_at": "2026-10-21T00:39:34.575Z",
+  "source": "data/food-database.ts（真实知识库）",
+  "total": 30,
+  "network_available": false,
+  "images": [
+    {
+      "sample_id": "S01",
+      "expected_name": "西红柿",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S02",
+      "expected_name": "鸡蛋",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S03",
+      "expected_name": "葱",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S04",
+      "expected_name": "苹果",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S05",
+      "expected_name": "牛肉",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S06",
+      "expected_name": "鱼",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S07",
+      "expected_name": "牛奶",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S08",
+      "expected_name": "豆腐",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S09",
+      "expected_name": "米饭",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S10",
+      "expected_name": "菠菜",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S11",
+      "expected_name": "鸭蛋",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S12",
+      "expected_name": "姜",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S13",
+      "expected_name": "香蕉",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S14",
+      "expected_name": "猪肉",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S15",
+      "expected_name": "虾",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S16",
+      "expected_name": "酸奶",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S17",
+      "expected_name": "豆干",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S18",
+      "expected_name": "面条",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S19",
+      "expected_name": "生菜",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S20",
+      "expected_name": "蒜",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S21",
+      "expected_name": "柠檬",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S22",
+      "expected_name": "鸡肉",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S23",
+      "expected_name": "蟹",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S24",
+      "expected_name": "奶酪",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S25",
+      "expected_name": "豆皮",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S26",
+      "expected_name": "面包",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S27",
+      "expected_name": "白菜",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S28",
+      "expected_name": "辣椒",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S29",
+      "expected_name": "橙子",
+      "status": "未执行",
+      "reason": "未发起下载"
+    },
+    {
+      "sample_id": "S30",
+      "expected_name": "排骨",
+      "status": "未执行",
+      "reason": "未发起下载"
+    }
+  ]
+}

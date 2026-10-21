@@ -91,7 +91,7 @@ Page({
       success: async (res: any) => {
         const tempPath = res.tempFiles[0].tempFilePath
         this.setData({ imgSrc: tempPath, showManual: false })
-        track('recognition_image_uploaded', { from: 'scan' })
+        track('ingredient_image_uploaded', { from: 'scan' })
 
         // 图片大小守卫
         const fs = wx.getFileSystemManager()
@@ -102,7 +102,7 @@ Page({
         }
 
         const creds = getBaiduCreds()
-        track('recognition_started', {
+        track('ingredient_recognition_started', {
           hasBaiduKey: !!(creds.apiKey && creds.secretKey)
         })
 
@@ -138,7 +138,7 @@ Page({
 
         if (result.success && result.items.length) {
           const knownCount = result.items.filter((i) => i.known).length
-          track('recognition_succeeded', {
+          track('ingredient_recognition_succeeded', {
             count: result.items.length,
             knownCount,
             provider: result.provider,
@@ -171,7 +171,7 @@ Page({
 
   /** 识别失败处理：埋点 + 提示 + 暴露手动输入入口 */
   handleFail(msg: string) {
-    track('recognition_failed', { reason: msg })
+    track('ingredient_recognition_failed', { reason: msg })
     track('photo_recognition_failed', { reason: msg })
     wx.showToast({ title: msg, icon: 'none' })
     this.setData({ showManual: true })
@@ -179,7 +179,7 @@ Page({
 
   /** 手动输入（场景 C / E 的兜底出口） */
   goManual() {
-    track('recognition_manual_entry', { from: 'scan_fail' })
+    track('ingredient_manual_entry', { from: 'scan_fail' })
     wx.navigateTo({ url: '/pages/ingredient/ingredient?mode=manual' })
   },
 

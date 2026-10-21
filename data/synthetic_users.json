@@ -1,0 +1,336 @@
+[
+  {
+    "user_id": "U001",
+    "display_name": "匿名用户-01",
+    "created_at": "2026-08-10",
+    "household_size": 3,
+    "diet_prefs": [
+      "控糖",
+      "低 GI"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U002",
+    "display_name": "独居-02",
+    "created_at": "2026-08-22",
+    "household_size": 2,
+    "diet_prefs": [
+      "高蛋白",
+      "健身"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U003",
+    "display_name": "合租屋-03",
+    "created_at": "2026-08-11",
+    "household_size": 1,
+    "diet_prefs": [],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U004",
+    "display_name": "合租屋-04",
+    "created_at": "2026-09-21",
+    "household_size": 4,
+    "diet_prefs": [
+      "家常味"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U005",
+    "display_name": "独居-05",
+    "created_at": "2026-09-10",
+    "household_size": 3,
+    "diet_prefs": [
+      "宝宝辅食"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U006",
+    "display_name": "三口之家-06",
+    "created_at": "2026-07-26",
+    "household_size": 5,
+    "diet_prefs": [
+      "宝宝辅食"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U007",
+    "display_name": "独居-07",
+    "created_at": "2026-07-28",
+    "household_size": 2,
+    "diet_prefs": [
+      "不吃辣"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U008",
+    "display_name": "合租屋-08",
+    "created_at": "2026-10-02",
+    "household_size": 3,
+    "diet_prefs": [],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U009",
+    "display_name": "匿名用户-09",
+    "created_at": "2026-07-26",
+    "household_size": 1,
+    "diet_prefs": [
+      "高蛋白",
+      "健身"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U010",
+    "display_name": "三口之家-10",
+    "created_at": "2026-07-13",
+    "household_size": 5,
+    "diet_prefs": [
+      "家常味"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U011",
+    "display_name": "匿名用户-11",
+    "created_at": "2026-08-17",
+    "household_size": 3,
+    "diet_prefs": [
+      "少油",
+      "清淡"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U012",
+    "display_name": "独居-12",
+    "created_at": "2026-08-21",
+    "household_size": 2,
+    "diet_prefs": [
+      "高蛋白",
+      "健身"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U013",
+    "display_name": "测试家庭-13",
+    "created_at": "2026-08-07",
+    "household_size": 4,
+    "diet_prefs": [
+      "不吃辣"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U014",
+    "display_name": "合租屋-14",
+    "created_at": "2026-09-04",
+    "household_size": 5,
+    "diet_prefs": [
+      "宝宝辅食"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U015",
+    "display_name": "小户型-15",
+    "created_at": "2026-08-12",
+    "household_size": 4,
+    "diet_prefs": [
+      "宝宝辅食"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U016",
+    "display_name": "合租屋-16",
+    "created_at": "2026-10-11",
+    "household_size": 2,
+    "diet_prefs": [
+      "宝宝辅食"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U017",
+    "display_name": "三口之家-17",
+    "created_at": "2026-10-01",
+    "household_size": 2,
+    "diet_prefs": [
+      "素食为主",
+      "少肉"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U018",
+    "display_name": "匿名用户-18",
+    "created_at": "2026-10-02",
+    "household_size": 4,
+    "diet_prefs": [
+      "少油",
+      "清淡"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U019",
+    "display_name": "测试家庭-19",
+    "created_at": "2026-07-29",
+    "household_size": 4,
+    "diet_prefs": [
+      "高蛋白",
+      "健身"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U020",
+    "display_name": "匿名用户-20",
+    "created_at": "2026-09-06",
+    "household_size": 3,
+    "diet_prefs": [
+      "少油",
+      "清淡"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U021",
+    "display_name": "三口之家-21",
+    "created_at": "2026-07-21",
+    "household_size": 5,
+    "diet_prefs": [
+      "素食为主",
+      "少肉"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U022",
+    "display_name": "合租屋-22",
+    "created_at": "2026-09-27",
+    "household_size": 4,
+    "diet_prefs": [
+      "爱吃海鲜"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U023",
+    "display_name": "三口之家-23",
+    "created_at": "2026-07-06",
+    "household_size": 1,
+    "diet_prefs": [
+      "爱吃海鲜"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U024",
+    "display_name": "三代同堂-24",
+    "created_at": "2026-09-20",
+    "household_size": 4,
+    "diet_prefs": [],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U025",
+    "display_name": "合租屋-25",
+    "created_at": "2026-06-23",
+    "household_size": 5,
+    "diet_prefs": [
+      "家常味"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U026",
+    "display_name": "独居-26",
+    "created_at": "2026-07-02",
+    "household_size": 5,
+    "diet_prefs": [],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U027",
+    "display_name": "合租屋-27",
+    "created_at": "2026-08-01",
+    "household_size": 5,
+    "diet_prefs": [
+      "控糖",
+      "低 GI"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U028",
+    "display_name": "合租屋-28",
+    "created_at": "2026-07-30",
+    "household_size": 2,
+    "diet_prefs": [
+      "爱吃海鲜"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U029",
+    "display_name": "合租屋-29",
+    "created_at": "2026-08-26",
+    "household_size": 4,
+    "diet_prefs": [
+      "宝宝辅食"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  },
+  {
+    "user_id": "U030",
+    "display_name": "三代同堂-30",
+    "created_at": "2026-09-16",
+    "household_size": 5,
+    "diet_prefs": [
+      "少油",
+      "清淡"
+    ],
+    "data_source": "synthetic_test",
+    "dataset_version": "fk-synthetic-v1"
+  }
+]

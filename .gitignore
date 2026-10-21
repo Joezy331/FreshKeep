@@ -20,3 +20,7 @@ project.private.config.json
 *.log
 .DS_Store
 Thumbs.db
+
+# ===== 模拟数据导入运行时产物（由脚本生成，非源码）=====
+data/.fk_storage.json
+data/.import_backup_*.json

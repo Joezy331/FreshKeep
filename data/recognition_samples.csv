@@ -1,0 +1,31 @@
+sample_id,category,expected_name,aliases,default_storage_method,search_query,image_url,image_local_path,real_api_status,notes
+S01,蔬菜,西红柿,番茄|圣女果|tomato,冷藏,西红柿 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S02,蛋类,鸡蛋,土鸡蛋|蛋|egg,冷藏,鸡蛋 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S03,调味品,葱,小葱|香葱|scallion,冷藏,葱 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S04,水果,苹果,apple,冷藏,苹果 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S05,肉类,牛肉,牛腩|牛排|beef,冷冻,牛肉 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S06,海鲜,鱼,鲜鱼|fish,冷冻,鱼 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S07,奶制品,牛奶,鲜奶|milk,冷藏,牛奶 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S08,豆制品,豆腐,嫩豆腐|老豆腐|tofu,冷藏,豆腐 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S09,主食,米饭,剩饭|rice,冷冻,米饭 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S10,蔬菜,菠菜,spinach,冷藏,菠菜 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S11,蛋类,鸭蛋,duck egg,冷藏,鸭蛋 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S12,调味品,姜,生姜|ginger,常温,姜 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S13,水果,香蕉,banana,常温,香蕉 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S14,肉类,猪肉,五花肉|里脊|pork,冷冻,猪肉 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S15,海鲜,虾,基围虾|shrimp,冷冻,虾 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S16,奶制品,酸奶,yogurt,冷藏,酸奶 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S17,豆制品,豆干,豆腐干|dried tofu,冷藏,豆干 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S18,主食,面条,面|noodle,常温,面条 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S19,蔬菜,生菜,lettuce,冷藏,生菜 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S20,调味品,蒜,大蒜|garlic,常温,蒜 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S21,水果,柠檬,lemon,冷藏,柠檬 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S22,肉类,鸡肉,鸡胸肉|鸡翅|chicken,冷冻,鸡肉 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S23,海鲜,蟹,螃蟹|crab,冷冻,蟹 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S24,奶制品,奶酪,芝士|cheese,冷藏,奶酪 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S25,豆制品,豆皮,千张|tofu skin|豆腐皮,冷藏,豆皮 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S26,主食,面包,吐司|bread,常温,面包 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S27,蔬菜,白菜,大白菜|cabbage,冷藏,白菜 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S28,调味品,辣椒,干辣椒|chili|红辣椒,冷藏,辣椒 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S29,水果,橙子,orange,冷藏,橙子 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行
+S30,肉类,排骨,猪排|ribs,冷冻,排骨 食材 实物图,,,未执行,ground-truth 来自知识库；真实图片/真实API待联网环境执行

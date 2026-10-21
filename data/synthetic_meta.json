@@ -1,0 +1,12 @@
+{
+  "dataset_version": "fk-synthetic-v1",
+  "generated_at": "2026-10-21T00:35:25.705Z",
+  "base_date": "2026-10-21",
+  "seed": 20261021,
+  "data_source": "synthetic_test",
+  "note": "全部为程序生成的虚构测试数据，不代表真实用户行为。",
+  "user_count": 30,
+  "batch_count": 191,
+  "event_count": 197,
+  "consumed_count": 20
+}

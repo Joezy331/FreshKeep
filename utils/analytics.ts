@@ -1,4 +1,4 @@
-import { TrackEvent } from '../types/user'
+import type { TrackEvent } from '../types/user'
 import { get, set, KEYS } from './storage'
 
 export interface EventLog {

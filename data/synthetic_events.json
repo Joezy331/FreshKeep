@@ -1,0 +1,1815 @@
+[
+  {
+    "event_id": "E-A-U001-B0005",
+    "event_time": "2026-10-01",
+    "user_id": "U001",
+    "batch_id": "U001-B0005",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U014-B0091",
+    "event_time": "2026-10-01",
+    "user_id": "U014",
+    "batch_id": "U014-B0091",
+    "ingredient_name": "姜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U016-B0106",
+    "event_time": "2026-10-01",
+    "user_id": "U016",
+    "batch_id": "U016-B0106",
+    "ingredient_name": "木耳",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U017-B0113",
+    "event_time": "2026-10-01",
+    "user_id": "U017",
+    "batch_id": "U017-B0113",
+    "ingredient_name": "梨",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U022-B0149",
+    "event_time": "2026-10-01",
+    "user_id": "U022",
+    "batch_id": "U022-B0149",
+    "ingredient_name": "酸奶",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U005-B0028",
+    "event_time": "2026-10-02",
+    "user_id": "U005",
+    "batch_id": "U005-B0028",
+    "ingredient_name": "平菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0102",
+    "event_time": "2026-10-02",
+    "user_id": "U015",
+    "batch_id": "U015-B0102",
+    "ingredient_name": "莲藕",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0141",
+    "event_time": "2026-10-02",
+    "user_id": "U021",
+    "batch_id": "U021-B0141",
+    "ingredient_name": "馒头",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0171",
+    "event_time": "2026-10-02",
+    "user_id": "U026",
+    "batch_id": "U026-B0171",
+    "ingredient_name": "西兰花",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U027-B0183",
+    "event_time": "2026-10-02",
+    "user_id": "U027",
+    "batch_id": "U027-B0183",
+    "ingredient_name": "虾",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U027-B0184",
+    "event_time": "2026-10-02",
+    "user_id": "U027",
+    "batch_id": "U027-B0184",
+    "ingredient_name": "牛奶",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0186",
+    "event_time": "2026-10-02",
+    "user_id": "U028",
+    "batch_id": "U028-B0186",
+    "ingredient_name": "羊肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0037",
+    "event_time": "2026-10-03",
+    "user_id": "U006",
+    "batch_id": "U006-B0037",
+    "ingredient_name": "馒头",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0039",
+    "event_time": "2026-10-03",
+    "user_id": "U006",
+    "batch_id": "U006-B0039",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U009-B0061",
+    "event_time": "2026-10-03",
+    "user_id": "U009",
+    "batch_id": "U009-B0061",
+    "ingredient_name": "羊肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U017-B0109",
+    "event_time": "2026-10-03",
+    "user_id": "U017",
+    "batch_id": "U017-B0109",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U017-B0111",
+    "event_time": "2026-10-03",
+    "user_id": "U017",
+    "batch_id": "U017-B0111",
+    "ingredient_name": "培根",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U017-B0112",
+    "event_time": "2026-10-03",
+    "user_id": "U017",
+    "batch_id": "U017-B0112",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0165",
+    "event_time": "2026-10-03",
+    "user_id": "U025",
+    "batch_id": "U025-B0165",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U021-B0140",
+    "event_time": "2026-10-03",
+    "user_id": "U021",
+    "batch_id": "U021-B0140",
+    "ingredient_name": "茄子",
+    "type": "ingredient_consumed",
+    "used": 2,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U004-B0020",
+    "event_time": "2026-10-04",
+    "user_id": "U004",
+    "batch_id": "U004-B0020",
+    "ingredient_name": "空心菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0079",
+    "event_time": "2026-10-04",
+    "user_id": "U012",
+    "batch_id": "U012-B0079",
+    "ingredient_name": "蟹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U014-B0089",
+    "event_time": "2026-10-04",
+    "user_id": "U014",
+    "batch_id": "U014-B0089",
+    "ingredient_name": "胡萝卜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U005-B0031",
+    "event_time": "2026-10-04",
+    "user_id": "U005",
+    "batch_id": "U005-B0031",
+    "ingredient_name": "火腿",
+    "type": "ingredient_consumed",
+    "used": 200,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U007-B0044",
+    "event_time": "2026-10-05",
+    "user_id": "U007",
+    "batch_id": "U007-B0044",
+    "ingredient_name": "芝麻",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U011-B0068",
+    "event_time": "2026-10-05",
+    "user_id": "U011",
+    "batch_id": "U011-B0068",
+    "ingredient_name": "面条",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U013-B0085",
+    "event_time": "2026-10-05",
+    "user_id": "U013",
+    "batch_id": "U013-B0085",
+    "ingredient_name": "杏鲍菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U013-B0086",
+    "event_time": "2026-10-05",
+    "user_id": "U013",
+    "batch_id": "U013-B0086",
+    "ingredient_name": "辣椒",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0098",
+    "event_time": "2026-10-05",
+    "user_id": "U015",
+    "batch_id": "U015-B0098",
+    "ingredient_name": "橘子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0164",
+    "event_time": "2026-10-05",
+    "user_id": "U025",
+    "batch_id": "U025-B0164",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0196",
+    "event_time": "2026-10-05",
+    "user_id": "U029",
+    "batch_id": "U029-B0196",
+    "ingredient_name": "西兰花",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0210",
+    "event_time": "2026-10-05",
+    "user_id": "U030",
+    "batch_id": "U030-B0210",
+    "ingredient_name": "酸奶",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U016-B0107",
+    "event_time": "2026-10-06",
+    "user_id": "U016",
+    "batch_id": "U016-B0107",
+    "ingredient_name": "辣椒",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0137",
+    "event_time": "2026-10-06",
+    "user_id": "U021",
+    "batch_id": "U021-B0137",
+    "ingredient_name": "橙子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0142",
+    "event_time": "2026-10-06",
+    "user_id": "U021",
+    "batch_id": "U021-B0142",
+    "ingredient_name": "茼蒿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U020-B0134",
+    "event_time": "2026-10-06",
+    "user_id": "U020",
+    "batch_id": "U020-B0134",
+    "ingredient_name": "饺子",
+    "type": "ingredient_consumed",
+    "used": 10,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U005-B0030",
+    "event_time": "2026-10-07",
+    "user_id": "U005",
+    "batch_id": "U005-B0030",
+    "ingredient_name": "鸡蛋",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U009-B0058",
+    "event_time": "2026-10-07",
+    "user_id": "U009",
+    "batch_id": "U009-B0058",
+    "ingredient_name": "丝瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U014-B0088",
+    "event_time": "2026-10-07",
+    "user_id": "U014",
+    "batch_id": "U014-B0088",
+    "ingredient_name": "蟹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0095",
+    "event_time": "2026-10-07",
+    "user_id": "U015",
+    "batch_id": "U015-B0095",
+    "ingredient_name": "饺子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U022-B0147",
+    "event_time": "2026-10-07",
+    "user_id": "U022",
+    "batch_id": "U022-B0147",
+    "ingredient_name": "白萝卜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U022-B0148",
+    "event_time": "2026-10-07",
+    "user_id": "U022",
+    "batch_id": "U022-B0148",
+    "ingredient_name": "苹果",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0166",
+    "event_time": "2026-10-07",
+    "user_id": "U025",
+    "batch_id": "U025-B0166",
+    "ingredient_name": "柚子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U027-B0182",
+    "event_time": "2026-10-07",
+    "user_id": "U027",
+    "batch_id": "U027-B0182",
+    "ingredient_name": "羊肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U027-B0185",
+    "event_time": "2026-10-07",
+    "user_id": "U027",
+    "batch_id": "U027-B0185",
+    "ingredient_name": "娃娃菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0206",
+    "event_time": "2026-10-07",
+    "user_id": "U030",
+    "batch_id": "U030-B0206",
+    "ingredient_name": "香菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0207",
+    "event_time": "2026-10-07",
+    "user_id": "U030",
+    "batch_id": "U030-B0207",
+    "ingredient_name": "豆干",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U002-B0008",
+    "event_time": "2026-10-08",
+    "user_id": "U002",
+    "batch_id": "U002-B0008",
+    "ingredient_name": "牛奶",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U016-B0108",
+    "event_time": "2026-10-08",
+    "user_id": "U016",
+    "batch_id": "U016-B0108",
+    "ingredient_name": "豆干",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U020-B0129",
+    "event_time": "2026-10-08",
+    "user_id": "U020",
+    "batch_id": "U020-B0129",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0188",
+    "event_time": "2026-10-08",
+    "user_id": "U028",
+    "batch_id": "U028-B0188",
+    "ingredient_name": "生菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0191",
+    "event_time": "2026-10-08",
+    "user_id": "U028",
+    "batch_id": "U028-B0191",
+    "ingredient_name": "白萝卜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U004-B0025",
+    "event_time": "2026-10-08",
+    "user_id": "U004",
+    "batch_id": "U004-B0025",
+    "ingredient_name": "豆浆",
+    "type": "ingredient_consumed",
+    "used": 1,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U006-B0036",
+    "event_time": "2026-10-08",
+    "user_id": "U006",
+    "batch_id": "U006-B0036",
+    "ingredient_name": "面包",
+    "type": "ingredient_consumed",
+    "used": 1,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U007-B0050",
+    "event_time": "2026-10-09",
+    "user_id": "U007",
+    "batch_id": "U007-B0050",
+    "ingredient_name": "莲藕",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0081",
+    "event_time": "2026-10-09",
+    "user_id": "U012",
+    "batch_id": "U012-B0081",
+    "ingredient_name": "杏鲍菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U013-B0083",
+    "event_time": "2026-10-09",
+    "user_id": "U013",
+    "batch_id": "U013-B0083",
+    "ingredient_name": "芹菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0136",
+    "event_time": "2026-10-09",
+    "user_id": "U021",
+    "batch_id": "U021-B0136",
+    "ingredient_name": "馒头",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0163",
+    "event_time": "2026-10-09",
+    "user_id": "U025",
+    "batch_id": "U025-B0163",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0179",
+    "event_time": "2026-10-09",
+    "user_id": "U026",
+    "batch_id": "U026-B0179",
+    "ingredient_name": "茼蒿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0208",
+    "event_time": "2026-10-09",
+    "user_id": "U030",
+    "batch_id": "U030-B0208",
+    "ingredient_name": "贝",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U010-B0063",
+    "event_time": "2026-10-10",
+    "user_id": "U010",
+    "batch_id": "U010-B0063",
+    "ingredient_name": "橘子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U011-B0072",
+    "event_time": "2026-10-10",
+    "user_id": "U011",
+    "batch_id": "U011-B0072",
+    "ingredient_name": "猪肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U014-B0090",
+    "event_time": "2026-10-10",
+    "user_id": "U014",
+    "batch_id": "U014-B0090",
+    "ingredient_name": "贝",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U008-B0052",
+    "event_time": "2026-10-10",
+    "user_id": "U008",
+    "batch_id": "U008-B0052",
+    "ingredient_name": "猪肉",
+    "type": "ingredient_consumed",
+    "used": 300,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U003-B0013",
+    "event_time": "2026-10-11",
+    "user_id": "U003",
+    "batch_id": "U003-B0013",
+    "ingredient_name": "猪肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0100",
+    "event_time": "2026-10-11",
+    "user_id": "U015",
+    "batch_id": "U015-B0100",
+    "ingredient_name": "小白菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0101",
+    "event_time": "2026-10-11",
+    "user_id": "U015",
+    "batch_id": "U015-B0101",
+    "ingredient_name": "虾",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0127",
+    "event_time": "2026-10-11",
+    "user_id": "U019",
+    "batch_id": "U019-B0127",
+    "ingredient_name": "莲藕",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U020-B0130",
+    "event_time": "2026-10-11",
+    "user_id": "U020",
+    "batch_id": "U020-B0130",
+    "ingredient_name": "豆皮",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0145",
+    "event_time": "2026-10-11",
+    "user_id": "U021",
+    "batch_id": "U021-B0145",
+    "ingredient_name": "桃子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0169",
+    "event_time": "2026-10-11",
+    "user_id": "U025",
+    "batch_id": "U025-B0169",
+    "ingredient_name": "木耳",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0173",
+    "event_time": "2026-10-11",
+    "user_id": "U026",
+    "batch_id": "U026-B0173",
+    "ingredient_name": "鸭肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0193",
+    "event_time": "2026-10-11",
+    "user_id": "U028",
+    "batch_id": "U028-B0193",
+    "ingredient_name": "金针菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0209",
+    "event_time": "2026-10-11",
+    "user_id": "U030",
+    "batch_id": "U030-B0209",
+    "ingredient_name": "茄子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U020-B0133",
+    "event_time": "2026-10-11",
+    "user_id": "U020",
+    "batch_id": "U020-B0133",
+    "ingredient_name": "红薯",
+    "type": "ingredient_consumed",
+    "used": 3,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U001-B0002",
+    "event_time": "2026-10-12",
+    "user_id": "U001",
+    "batch_id": "U001-B0002",
+    "ingredient_name": "玉米",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U001-B0004",
+    "event_time": "2026-10-12",
+    "user_id": "U001",
+    "batch_id": "U001-B0004",
+    "ingredient_name": "橘子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U002-B0009",
+    "event_time": "2026-10-12",
+    "user_id": "U002",
+    "batch_id": "U002-B0009",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U004-B0024",
+    "event_time": "2026-10-12",
+    "user_id": "U004",
+    "batch_id": "U004-B0024",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U013-B0082",
+    "event_time": "2026-10-12",
+    "user_id": "U013",
+    "batch_id": "U013-B0082",
+    "ingredient_name": "排骨",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U017-B0110",
+    "event_time": "2026-10-12",
+    "user_id": "U017",
+    "batch_id": "U017-B0110",
+    "ingredient_name": "鸭肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U024-B0160",
+    "event_time": "2026-10-12",
+    "user_id": "U024",
+    "batch_id": "U024-B0160",
+    "ingredient_name": "火龙果",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0204",
+    "event_time": "2026-10-12",
+    "user_id": "U030",
+    "batch_id": "U030-B0204",
+    "ingredient_name": "洋葱",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U007-B0049",
+    "event_time": "2026-10-13",
+    "user_id": "U007",
+    "batch_id": "U007-B0049",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0176",
+    "event_time": "2026-10-13",
+    "user_id": "U026",
+    "batch_id": "U026-B0176",
+    "ingredient_name": "苦瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0201",
+    "event_time": "2026-10-13",
+    "user_id": "U029",
+    "batch_id": "U029-B0201",
+    "ingredient_name": "山药",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U009-B0057",
+    "event_time": "2026-10-13",
+    "user_id": "U009",
+    "batch_id": "U009-B0057",
+    "ingredient_name": "木耳",
+    "type": "ingredient_consumed",
+    "used": 100,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U004-B0021",
+    "event_time": "2026-10-14",
+    "user_id": "U004",
+    "batch_id": "U004-B0021",
+    "ingredient_name": "娃娃菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0035",
+    "event_time": "2026-10-14",
+    "user_id": "U006",
+    "batch_id": "U006-B0035",
+    "ingredient_name": "梨",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U008-B0053",
+    "event_time": "2026-10-14",
+    "user_id": "U008",
+    "batch_id": "U008-B0053",
+    "ingredient_name": "山药",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0073",
+    "event_time": "2026-10-14",
+    "user_id": "U012",
+    "batch_id": "U012-B0073",
+    "ingredient_name": "丝瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0074",
+    "event_time": "2026-10-14",
+    "user_id": "U012",
+    "batch_id": "U012-B0074",
+    "ingredient_name": "口蘑",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0080",
+    "event_time": "2026-10-14",
+    "user_id": "U012",
+    "batch_id": "U012-B0080",
+    "ingredient_name": "玉米",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0096",
+    "event_time": "2026-10-14",
+    "user_id": "U015",
+    "batch_id": "U015-B0096",
+    "ingredient_name": "白萝卜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U024-B0158",
+    "event_time": "2026-10-14",
+    "user_id": "U024",
+    "batch_id": "U024-B0158",
+    "ingredient_name": "豆皮",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0162",
+    "event_time": "2026-10-14",
+    "user_id": "U025",
+    "batch_id": "U025-B0162",
+    "ingredient_name": "苦瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U015-B0103",
+    "event_time": "2026-10-14",
+    "user_id": "U015",
+    "batch_id": "U015-B0103",
+    "ingredient_name": "香菇",
+    "type": "ingredient_consumed",
+    "used": 200,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U026-B0172",
+    "event_time": "2026-10-14",
+    "user_id": "U026",
+    "batch_id": "U026-B0172",
+    "ingredient_name": "奶酪",
+    "type": "ingredient_consumed",
+    "used": 200,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U007-B0046",
+    "event_time": "2026-10-15",
+    "user_id": "U007",
+    "batch_id": "U007-B0046",
+    "ingredient_name": "面条",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U013-B0084",
+    "event_time": "2026-10-15",
+    "user_id": "U013",
+    "batch_id": "U013-B0084",
+    "ingredient_name": "香肠",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U022-B0151",
+    "event_time": "2026-10-15",
+    "user_id": "U022",
+    "batch_id": "U022-B0151",
+    "ingredient_name": "葡萄",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U023-B0154",
+    "event_time": "2026-10-15",
+    "user_id": "U023",
+    "batch_id": "U023-B0154",
+    "ingredient_name": "苦瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U024-B0157",
+    "event_time": "2026-10-15",
+    "user_id": "U024",
+    "batch_id": "U024-B0157",
+    "ingredient_name": "火龙果",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U028-B0194",
+    "event_time": "2026-10-15",
+    "user_id": "U028",
+    "batch_id": "U028-B0194",
+    "ingredient_name": "菠菜",
+    "type": "ingredient_consumed",
+    "used": 1,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U010-B0066",
+    "event_time": "2026-10-16",
+    "user_id": "U010",
+    "batch_id": "U010-B0066",
+    "ingredient_name": "葱",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0078",
+    "event_time": "2026-10-16",
+    "user_id": "U012",
+    "batch_id": "U012-B0078",
+    "ingredient_name": "培根",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U018-B0115",
+    "event_time": "2026-10-16",
+    "user_id": "U018",
+    "batch_id": "U018-B0115",
+    "ingredient_name": "牛肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0119",
+    "event_time": "2026-10-16",
+    "user_id": "U019",
+    "batch_id": "U019-B0119",
+    "ingredient_name": "胡萝卜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0174",
+    "event_time": "2026-10-16",
+    "user_id": "U026",
+    "batch_id": "U026-B0174",
+    "ingredient_name": "芝麻",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U027-B0181",
+    "event_time": "2026-10-16",
+    "user_id": "U027",
+    "batch_id": "U027-B0181",
+    "ingredient_name": "虾",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0192",
+    "event_time": "2026-10-16",
+    "user_id": "U028",
+    "batch_id": "U028-B0192",
+    "ingredient_name": "面条",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0200",
+    "event_time": "2026-10-16",
+    "user_id": "U029",
+    "batch_id": "U029-B0200",
+    "ingredient_name": "上海青",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0202",
+    "event_time": "2026-10-16",
+    "user_id": "U029",
+    "batch_id": "U029-B0202",
+    "ingredient_name": "苹果",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0034",
+    "event_time": "2026-10-17",
+    "user_id": "U006",
+    "batch_id": "U006-B0034",
+    "ingredient_name": "丝瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0077",
+    "event_time": "2026-10-17",
+    "user_id": "U012",
+    "batch_id": "U012-B0077",
+    "ingredient_name": "梨",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U018-B0116",
+    "event_time": "2026-10-17",
+    "user_id": "U018",
+    "batch_id": "U018-B0116",
+    "ingredient_name": "橙子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0122",
+    "event_time": "2026-10-17",
+    "user_id": "U019",
+    "batch_id": "U019-B0122",
+    "ingredient_name": "生菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U010-B0064",
+    "event_time": "2026-10-18",
+    "user_id": "U010",
+    "batch_id": "U010-B0064",
+    "ingredient_name": "猕猴桃",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U011-B0071",
+    "event_time": "2026-10-18",
+    "user_id": "U011",
+    "batch_id": "U011-B0071",
+    "ingredient_name": "豆皮",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0126",
+    "event_time": "2026-10-18",
+    "user_id": "U019",
+    "batch_id": "U019-B0126",
+    "ingredient_name": "猪肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U001-B0007",
+    "event_time": "2026-10-19",
+    "user_id": "U001",
+    "batch_id": "U001-B0007",
+    "ingredient_name": "蓝莓",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U002-B0010",
+    "event_time": "2026-10-19",
+    "user_id": "U002",
+    "batch_id": "U002-B0010",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U003-B0017",
+    "event_time": "2026-10-19",
+    "user_id": "U003",
+    "batch_id": "U003-B0017",
+    "ingredient_name": "南瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U016-B0105",
+    "event_time": "2026-10-19",
+    "user_id": "U016",
+    "batch_id": "U016-B0105",
+    "ingredient_name": "排骨",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U020-B0135",
+    "event_time": "2026-10-19",
+    "user_id": "U020",
+    "batch_id": "U020-B0135",
+    "ingredient_name": "茼蒿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0144",
+    "event_time": "2026-10-19",
+    "user_id": "U021",
+    "batch_id": "U021-B0144",
+    "ingredient_name": "西红柿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U023-B0155",
+    "event_time": "2026-10-19",
+    "user_id": "U023",
+    "batch_id": "U023-B0155",
+    "ingredient_name": "柚子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0190",
+    "event_time": "2026-10-19",
+    "user_id": "U028",
+    "batch_id": "U028-B0190",
+    "ingredient_name": "莲藕",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U006-B0033",
+    "event_time": "2026-10-19",
+    "user_id": "U006",
+    "batch_id": "U006-B0033",
+    "ingredient_name": "香肠",
+    "type": "ingredient_consumed",
+    "used": 200,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U008-B0051",
+    "event_time": "2026-10-20",
+    "user_id": "U008",
+    "batch_id": "U008-B0051",
+    "ingredient_name": "鸡蛋",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U010-B0062",
+    "event_time": "2026-10-20",
+    "user_id": "U010",
+    "batch_id": "U010-B0062",
+    "ingredient_name": "西兰花",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0076",
+    "event_time": "2026-10-20",
+    "user_id": "U012",
+    "batch_id": "U012-B0076",
+    "ingredient_name": "苦瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U020-B0132",
+    "event_time": "2026-10-20",
+    "user_id": "U020",
+    "batch_id": "U020-B0132",
+    "ingredient_name": "香菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0168",
+    "event_time": "2026-10-20",
+    "user_id": "U025",
+    "batch_id": "U025-B0168",
+    "ingredient_name": "冬瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0205",
+    "event_time": "2026-10-20",
+    "user_id": "U030",
+    "batch_id": "U030-B0205",
+    "ingredient_name": "西红柿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0041",
+    "event_time": "2026-10-21",
+    "user_id": "U006",
+    "batch_id": "U006-B0041",
+    "ingredient_name": "油麦菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U007-B0047",
+    "event_time": "2026-10-21",
+    "user_id": "U007",
+    "batch_id": "U007-B0047",
+    "ingredient_name": "鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0175",
+    "event_time": "2026-10-21",
+    "user_id": "U026",
+    "batch_id": "U026-B0175",
+    "ingredient_name": "香蕉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U019-B0125",
+    "event_time": "2026-10-21",
+    "user_id": "U019",
+    "batch_id": "U019-B0125",
+    "ingredient_name": "西瓜",
+    "type": "ingredient_consumed",
+    "used": 1,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U001-B0006",
+    "event_time": "2026-10-22",
+    "user_id": "U001",
+    "batch_id": "U001-B0006",
+    "ingredient_name": "茼蒿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U002-B0011",
+    "event_time": "2026-10-22",
+    "user_id": "U002",
+    "batch_id": "U002-B0011",
+    "ingredient_name": "南瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0120",
+    "event_time": "2026-10-22",
+    "user_id": "U019",
+    "batch_id": "U019-B0120",
+    "ingredient_name": "茼蒿",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0197",
+    "event_time": "2026-10-22",
+    "user_id": "U029",
+    "batch_id": "U029-B0197",
+    "ingredient_name": "鸭肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0040",
+    "event_time": "2026-10-23",
+    "user_id": "U006",
+    "batch_id": "U006-B0040",
+    "ingredient_name": "鸭蛋",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0121",
+    "event_time": "2026-10-23",
+    "user_id": "U019",
+    "batch_id": "U019-B0121",
+    "ingredient_name": "贝",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U022-B0150",
+    "event_time": "2026-10-23",
+    "user_id": "U022",
+    "batch_id": "U022-B0150",
+    "ingredient_name": "面包",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U023-B0156",
+    "event_time": "2026-10-23",
+    "user_id": "U023",
+    "batch_id": "U023-B0156",
+    "ingredient_name": "虾",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U001-B0003",
+    "event_time": "2026-10-24",
+    "user_id": "U001",
+    "batch_id": "U001-B0003",
+    "ingredient_name": "杏鲍菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U008-B0055",
+    "event_time": "2026-10-24",
+    "user_id": "U008",
+    "batch_id": "U008-B0055",
+    "ingredient_name": "鸭肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U020-B0128",
+    "event_time": "2026-10-24",
+    "user_id": "U020",
+    "batch_id": "U020-B0128",
+    "ingredient_name": "花生",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0189",
+    "event_time": "2026-10-24",
+    "user_id": "U028",
+    "batch_id": "U028-B0189",
+    "ingredient_name": "蓝莓",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U007-B0048",
+    "event_time": "2026-10-25",
+    "user_id": "U007",
+    "batch_id": "U007-B0048",
+    "ingredient_name": "饺子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U008-B0054",
+    "event_time": "2026-10-25",
+    "user_id": "U008",
+    "batch_id": "U008-B0054",
+    "ingredient_name": "蒜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U009-B0059",
+    "event_time": "2026-10-25",
+    "user_id": "U009",
+    "batch_id": "U009-B0059",
+    "ingredient_name": "土豆",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U011-B0069",
+    "event_time": "2026-10-25",
+    "user_id": "U011",
+    "batch_id": "U011-B0069",
+    "ingredient_name": "金针菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U011-B0070",
+    "event_time": "2026-10-25",
+    "user_id": "U011",
+    "batch_id": "U011-B0070",
+    "ingredient_name": "姜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0123",
+    "event_time": "2026-10-25",
+    "user_id": "U019",
+    "batch_id": "U019-B0123",
+    "ingredient_name": "莲藕",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U024-B0159",
+    "event_time": "2026-10-25",
+    "user_id": "U024",
+    "batch_id": "U024-B0159",
+    "ingredient_name": "丝瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U025-B0167",
+    "event_time": "2026-10-25",
+    "user_id": "U025",
+    "batch_id": "U025-B0167",
+    "ingredient_name": "姜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0203",
+    "event_time": "2026-10-25",
+    "user_id": "U030",
+    "batch_id": "U030-B0203",
+    "ingredient_name": "腐竹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U030-B0211",
+    "event_time": "2026-10-25",
+    "user_id": "U030",
+    "batch_id": "U030-B0211",
+    "ingredient_name": "黄瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U021-B0138",
+    "event_time": "2026-10-25",
+    "user_id": "U021",
+    "batch_id": "U021-B0138",
+    "ingredient_name": "草莓",
+    "type": "ingredient_consumed",
+    "used": 1,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U026-B0178",
+    "event_time": "2026-10-25",
+    "user_id": "U026",
+    "batch_id": "U026-B0178",
+    "ingredient_name": "茄子",
+    "type": "ingredient_consumed",
+    "used": 2,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U003-B0018",
+    "event_time": "2026-10-26",
+    "user_id": "U003",
+    "batch_id": "U003-B0018",
+    "ingredient_name": "蟹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U004-B0022",
+    "event_time": "2026-10-26",
+    "user_id": "U004",
+    "batch_id": "U004-B0022",
+    "ingredient_name": "牛肉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U006-B0038",
+    "event_time": "2026-10-26",
+    "user_id": "U006",
+    "batch_id": "U006-B0038",
+    "ingredient_name": "蓝莓",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0097",
+    "event_time": "2026-10-26",
+    "user_id": "U015",
+    "batch_id": "U015-B0097",
+    "ingredient_name": "金针菇",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U017-B0114",
+    "event_time": "2026-10-26",
+    "user_id": "U017",
+    "batch_id": "U017-B0114",
+    "ingredient_name": "牛奶",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0143",
+    "event_time": "2026-10-26",
+    "user_id": "U021",
+    "batch_id": "U021-B0143",
+    "ingredient_name": "蓝莓",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U001-B0001",
+    "event_time": "2026-10-27",
+    "user_id": "U001",
+    "batch_id": "U001-B0001",
+    "ingredient_name": "橘子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U003-B0015",
+    "event_time": "2026-10-27",
+    "user_id": "U003",
+    "batch_id": "U003-B0015",
+    "ingredient_name": "油麦菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U005-B0027",
+    "event_time": "2026-10-27",
+    "user_id": "U005",
+    "batch_id": "U005-B0027",
+    "ingredient_name": "玉米",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U010-B0065",
+    "event_time": "2026-10-27",
+    "user_id": "U010",
+    "batch_id": "U010-B0065",
+    "ingredient_name": "空心菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U014-B0092",
+    "event_time": "2026-10-27",
+    "user_id": "U014",
+    "batch_id": "U014-B0092",
+    "ingredient_name": "洋葱",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0099",
+    "event_time": "2026-10-27",
+    "user_id": "U015",
+    "batch_id": "U015-B0099",
+    "ingredient_name": "胡萝卜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U021-B0139",
+    "event_time": "2026-10-27",
+    "user_id": "U021",
+    "batch_id": "U021-B0139",
+    "ingredient_name": "芹菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0199",
+    "event_time": "2026-10-27",
+    "user_id": "U029",
+    "batch_id": "U029-B0199",
+    "ingredient_name": "豆皮",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U003-B0014",
+    "event_time": "2026-10-28",
+    "user_id": "U003",
+    "batch_id": "U003-B0014",
+    "ingredient_name": "桃子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U012-B0075",
+    "event_time": "2026-10-28",
+    "user_id": "U012",
+    "batch_id": "U012-B0075",
+    "ingredient_name": "豆腐",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U015-B0094",
+    "event_time": "2026-10-28",
+    "user_id": "U015",
+    "batch_id": "U015-B0094",
+    "ingredient_name": "芒果",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U023-B0153",
+    "event_time": "2026-10-28",
+    "user_id": "U023",
+    "batch_id": "U023-B0153",
+    "ingredient_name": "香菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U004-B0023",
+    "event_time": "2026-10-29",
+    "user_id": "U004",
+    "batch_id": "U004-B0023",
+    "ingredient_name": "火龙果",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U009-B0060",
+    "event_time": "2026-10-29",
+    "user_id": "U009",
+    "batch_id": "U009-B0060",
+    "ingredient_name": "香蕉",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U018-B0117",
+    "event_time": "2026-10-29",
+    "user_id": "U018",
+    "batch_id": "U018-B0117",
+    "ingredient_name": "面包",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U019-B0124",
+    "event_time": "2026-10-29",
+    "user_id": "U019",
+    "batch_id": "U019-B0124",
+    "ingredient_name": "娃娃菜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U020-B0131",
+    "event_time": "2026-10-29",
+    "user_id": "U020",
+    "batch_id": "U020-B0131",
+    "ingredient_name": "苦瓜",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U023-B0152",
+    "event_time": "2026-10-29",
+    "user_id": "U023",
+    "batch_id": "U023-B0152",
+    "ingredient_name": "茄子",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0170",
+    "event_time": "2026-10-29",
+    "user_id": "U026",
+    "batch_id": "U026-B0170",
+    "ingredient_name": "梨",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U026-B0177",
+    "event_time": "2026-10-29",
+    "user_id": "U026",
+    "batch_id": "U026-B0177",
+    "ingredient_name": "蟹",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U028-B0187",
+    "event_time": "2026-10-29",
+    "user_id": "U028",
+    "batch_id": "U028-B0187",
+    "ingredient_name": "玉米",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-A-U029-B0198",
+    "event_time": "2026-10-29",
+    "user_id": "U029",
+    "batch_id": "U029-B0198",
+    "ingredient_name": "鱿鱼",
+    "type": "ingredient_added_to_inventory",
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U018-B0118",
+    "event_time": "2026-11-02",
+    "user_id": "U018",
+    "batch_id": "U018-B0118",
+    "ingredient_name": "玉米",
+    "type": "ingredient_consumed",
+    "used": 2,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U007-B0043",
+    "event_time": "2026-11-05",
+    "user_id": "U007",
+    "batch_id": "U007-B0043",
+    "ingredient_name": "蒜",
+    "type": "ingredient_consumed",
+    "used": 1,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U005-B0029",
+    "event_time": "2026-11-06",
+    "user_id": "U005",
+    "batch_id": "U005-B0029",
+    "ingredient_name": "蟹",
+    "type": "ingredient_consumed",
+    "used": 2,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U003-B0016",
+    "event_time": "2026-11-11",
+    "user_id": "U003",
+    "batch_id": "U003-B0016",
+    "ingredient_name": "洋葱",
+    "type": "ingredient_consumed",
+    "used": 2,
+    "left": 0,
+    "data_source": "synthetic_test"
+  },
+  {
+    "event_id": "E-C-U007-B0045",
+    "event_time": "2026-11-17",
+    "user_id": "U007",
+    "batch_id": "U007-B0045",
+    "ingredient_name": "羊肉",
+    "type": "ingredient_consumed",
+    "used": 300,
+    "left": 0,
+    "data_source": "synthetic_test"
+  }
+]

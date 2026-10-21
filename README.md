@@ -86,10 +86,89 @@ AI 食谱推荐
 > 设计原则：**先解决识别结果不可靠，再追求识别品类扩张；先建立真实测试证据，再声称效果提升。**
 
 - **识别结果不可靠的根因已修复**：改造前 `scan.ts` 直连百度且只取 Top-1、把其余候选丢弃；现改为候选数组 + 集中式归一化 + 确认页逐条去噪/改名，并修复「scan 绕过可插拔引擎」的架构不一致（改为百度优先 + 可插拔引擎降级）。
-- **知识库覆盖**：食材条目由 28 条扩充到 **67 条**（纯新增，不改动既有 28 条），覆盖叶菜细分、根茎、瓜果、更多水果、菌菇、肉类部位、水产、蛋奶、主食半成品。
+- **知识库覆盖**：食材条目由 28 条扩充到 **67 条**（纯新增，不改动既有 28 条），覆盖叶菜细分、根茎、瓜果、更多水果、菌菇、肉类部位、水产、蛋奶、主食半成品。第二轮再 +20 → **87 条**，分类扩至 10 类。
 - **可测试性**：新增 `tools/recognition-tests.mjs`，对归一化 / 候选构建 / 置信度 / 去重 / 降级判定做 **17 条真实单元测试**（全绿）；真实模型 API 因无可用密钥**明确标记未执行**，不冒充真实模型测试。
 - **诚实声明**：本轮**未声称任何识别准确率 % / 真实用户数据**；百度 `dish` 属菜品识别，返回多为菜名，经归一化后大概率 `known=false` 需用户校正——此为已知真实局限，二期拟切换百度 `ingredient` 接口或接入真实视觉模型。
-- 详见 `docs/recognition/`：`recognition_audit.md` / `recognition_design.md` / `recognition_test_plan.md` / `recognition_test_results.csv` / `recognition_iteration_report.md`。
+  - 详见 `docs/recognition/`：`recognition_audit.md` / `recognition_design.md` / `recognition_test_plan.md` / `recognition_test_results.csv` / `recognition_iteration_report.md`。
+
+---
+
+## 全量迭代（第二轮）· 测试、模拟数据与业务闭环
+
+> 本轮在「第一轮识别优化」基础上，补齐**可复跑测试、30 模拟用户、30 图片测试集、库存业务闭环回归**，并把所有真实缺口**诚实标记**。详见 `docs/iteration-audit.md`。
+
+### 识别配置：Mock vs 真实
+
+| 模式 | 触发 | 说明 |
+|------|------|------|
+| **真实百度** | 管理员已配百度密钥 | `scan.ts` 优先调用百度 `dish`（`top_num=3` 多候选） |
+| **可插拔引擎降级** | 无密钥 / 百度异常 / 无结果 | 自动降级到 `MockVisionProvider` 或已配置的本地网关（最多一次，不无限重试） |
+| **手动输入** | 完全无法识别 | 暴露「手动输入食材」入口，不卡死 |
+
+> 百度 `dish` 返回多为**菜名**，经 `normalizeFoodName` 归一化后大概率 `known=false` 需用户校正——这是已知真实局限。第二轮新增 **87 条知识库 + 10 类标准名/别名**，提高命中率；接真实视觉模型后可进一步放行。
+
+### 跑测试（Node，无需小程序运行时）
+
+```bash
+# 识别核心单测（17/17 真实执行；真实 API 行标记未执行）
+node --experimental-strip-types --import ./tools/hooks.mjs tools/recognition-tests.mjs
+
+# 库存业务闭环回归（17 场景 + 复跑 S13/S14/S16/R06，全绿）
+node --experimental-strip-types --import ./tools/hooks.mjs tools/inventory-regression-tests.mjs
+
+# 既有产品证据回归（26/26/20/20/5/5 全绿）
+node --experimental-strip-types --import ./tools/hooks.mjs tools/product-evidence-tests.mjs
+```
+> 所有 `.mjs` 测试必须经 `--experimental-strip-types --import ./tools/hooks.mjs` 启动（hooks 把 `.ts` 内部依赖正确解析）。
+
+### 生成 30 模拟用户 + 库存 + 事件
+
+```bash
+node --experimental-strip-types --import ./tools/hooks.mjs scripts/generate_synthetic_data.mjs [--base-date YYYY-MM-DD]
+# 产出：data/synthetic_users.json / synthetic_inventory_batches.json / synthetic_events.json / synthetic_meta.json
+# 固定种子 20261021，可复现；全部 data_source='synthetic_test'
+```
+
+### 导入到本地存储（dry-run / 幂等 / 仅 synthetic_test / 备份回滚）
+
+```bash
+node --experimental-strip-types --import ./tools/hooks.mjs scripts/import_synthetic_data.mjs            # 默认 dry-run
+node --experimental-strip-types --import ./tools/hooks.mjs scripts/import_synthetic_data.mjs --apply     # 真实导入
+node --experimental-strip-types --import ./tools/hooks.mjs scripts/import_synthetic_data.mjs --verify    # 校验当前存储
+node --experimental-strip-types --import ./tools/hooks.mjs scripts/import_synthetic_data.mjs --rollback  # 回滚最近备份
+```
+- **默认 dry-run**，必须 `--apply` 才写；任何非 `synthetic_test` 数据一律拒绝。
+- **幂等**：按 `user_id` / `batch_id` / `event_id` 去重，重复导入不重复、不覆盖真实单用户。
+- 写前自动备份到 `data/.import_backup_<ts>.json`，`--rollback` 一键还原。
+
+### 30 图片测试集（诚实缺口）
+
+```bash
+node --experimental-strip-types --import ./tools/hooks.mjs scripts/fetch_recognition_images.mjs --no-download
+# 产出：data/recognition_samples.csv（30 行 ground-truth）+ data/recognition_images/manifest.json
+```
+- ground-truth 标准名**来自真实知识库**；真实图片与真实 API 因网络/密钥不可用**标记未执行**，不伪造。
+
+### 切换用户 / 回滚（小程序内）
+
+- 模拟用户存于 `fk:synthetic_users`，与真实单用户 `fk:user` **隔离**；可在「开发演示」中切换以查看不同家庭库存。
+- 导入产生的本地存储变动均可由 `import_synthetic_data.mjs --rollback` 回滚。
+
+### 已完成 vs 待验证
+
+| 项 | 状态 |
+|---|---|
+| 识别双通道 + 候选数组 + 集中式归一化 | ✅ 已交付并推送 |
+| 8 个 `ingredient_*` 埋点 + `ingredient_consumed` | ✅ |
+| 知识库扩至 87 条 / 10 类 | ✅ |
+| 识别核心单测 17/17 | ✅ |
+| 库存业务闭环回归 17/17（含 S13/S14/S16/R06） | ✅ |
+| 30 模拟用户 + 库存 + 事件 | ✅（程序生成，非真实） |
+| 30 图片 ground-truth 表 | ✅ |
+| 安全导入工具（dry-run/幂等/回滚） | ✅ |
+| **30 张真实图片下载** | ⚠️ 待验证（网络屏蔽，未执行） |
+| **真实百度/视觉识别准确率** | ⚠️ 待验证（无密钥，未执行） |
+| **真实用户留存 / 减浪费效果** | ⚠️ 待验证（无真实用户） |
 
 ---
 
@@ -162,7 +241,7 @@ Freshkeep/
 ├── assets/                         # 手绘线稿插画 / 图标 / TabBar
 ├── preview/design-preview.html      # 设计预览页（浏览器直接看）
 ├── types/                          # Ingredient / Recipe / User 等类型
-├── data/                           # 食材知识库（28 种）/ 菜谱库（19 道）/ 演示数据
+├── data/                           # 食材知识库（87 种）/ 菜谱库 / 演示数据 / 模拟数据(JSON) / 图片测试集(CSV)
 ├── services/
 │   ├── baidu/                      # 百度菜品识别凭证安全加载层（本地存储）
 │   ├── ai/                         # 可插拔视觉 Provider 接口 + 网关 Provider + 配置
@@ -189,7 +268,7 @@ Freshkeep/
 | 6 | 加入冰箱 | 识别结果写入库存，带成功反馈与跳转 |
 | 7 | 冰箱食材列表 | 按紧急度排序，状态可视化（呼吸点 / 色块） |
 | 8 | 冰箱分区 | 冷冻 / 冷藏 / 蔬果保鲜 / 门架 / 常温，可折叠 |
-| 9 | 保存方式推荐 | 28 种食材知识库，给出方式 + 分区 + 参考时长 + 注意事项 |
+| 9 | 保存方式推荐 | 87 种食材知识库，给出方式 + 分区 + 参考时长 + 注意事项 |
 | 10 | 最佳食用期计算 | 购买日期 + 参考天数自动推算 |
 | 11 | 临期提醒 | 通知中心、首页提醒卡、今日建议文案、已读标记 |
 | 12 | 食谱推荐 | 临期优先 > 匹配度 > 常做 > 耗时 > 缺料最少 |

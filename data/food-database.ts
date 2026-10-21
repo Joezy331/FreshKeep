@@ -673,6 +673,168 @@ export const FOOD_DATABASE: FoodKnowledge[] = [
     ],
     freezable: true, tips: '冷藏短期；长期或大量建议冷冻。',
     aliases: ['腊肠', 'sausage']
+  },
+
+  /* ---------------- 二期扩充（对照竞品覆盖度，纯新增，不改动既有） ---------------- */
+
+  // 叶菜类补充
+  {
+    name: '娃娃菜', emoji: '🥬', category: '蔬菜', defaultUnit: '颗', defaultQuantity: 1,
+    options: [
+      { method: '冷藏', area: '蔬果保鲜区', days: 10, label: '冷藏 · 蔬果保鲜区' },
+      { method: '常温', area: '常温区', days: 5, label: '常温 · 通风处' }
+    ],
+    freezable: false, tips: '整颗更耐放，切开后包保鲜膜尽快食用。',
+    aliases: ['wombok', '微型白菜']
+  },
+  {
+    name: '香菜', emoji: '🌿', category: '蔬菜', defaultUnit: '把', defaultQuantity: 1,
+    options: [{ method: '冷藏', area: '蔬果保鲜区', days: 5, label: '冷藏 · 蔬果保鲜区' }],
+    freezable: true, tips: '根部泡水保鲜，或切碎冷冻长期保存。',
+    aliases: ['芫荽', 'cilantro', '香菜苗']
+  },
+  {
+    name: '茼蒿', emoji: '🥬', category: '蔬菜', defaultUnit: '把', defaultQuantity: 1,
+    options: [{ method: '冷藏', area: '蔬果保鲜区', days: 3, label: '冷藏 · 蔬果保鲜区' }],
+    freezable: true, tips: '叶菜类尽快食用，焯水冷冻可延长保存。',
+    aliases: ['tong hao', '菊花菜']
+  },
+  {
+    name: '丝瓜', emoji: '🥒', category: '蔬菜', defaultUnit: '根', defaultQuantity: 1,
+    options: [{ method: '冷藏', area: '蔬果保鲜区', days: 4, label: '冷藏 · 蔬果保鲜区' }],
+    freezable: true, tips: '冷藏保存，去皮后易氧化，尽快食用。',
+    aliases: ['luffa', '胜瓜']
+  },
+
+  // 肉禽类补充
+  {
+    name: '羊肉', emoji: '🍖', category: '肉类', defaultUnit: 'g', defaultQuantity: 300,
+    options: [
+      { method: '冷冻', area: '冷冻区', days: 90, label: '冷冻 · 冷冻室（3个月内最佳）' },
+      { method: '冷藏', area: '冷藏区', days: 2, label: '冷藏 · 冷藏室下层' }
+    ],
+    freezable: true, tips: '分装冷冻，生熟分开，冷藏生肉放下层。',
+    aliases: ['羊', 'lamb', 'mutton']
+  },
+  {
+    name: '鸭肉', emoji: '🦆', category: '肉类', defaultUnit: 'g', defaultQuantity: 300,
+    options: [
+      { method: '冷冻', area: '冷冻区', days: 90, label: '冷冻 · 冷冻室（3个月内最佳）' },
+      { method: '冷藏', area: '冷藏区', days: 2, label: '冷藏 · 冷藏室下层' }
+    ],
+    freezable: true, tips: '建议 24 小时内食用或冷冻；解冻后不重复冷冻。',
+    aliases: ['鸭', 'duck']
+  },
+
+  // 水产补充
+  {
+    name: '鱿鱼', emoji: '🦑', category: '海鲜', defaultUnit: 'g', defaultQuantity: 250,
+    options: [
+      { method: '冷冻', area: '冷冻区', days: 60, label: '冷冻 · 冷冻室（2个月内最佳）' },
+      { method: '冷藏', area: '冷藏区', days: 1, label: '冷藏 · 冷藏室下层（现吃）' }
+    ],
+    freezable: true, tips: '去除内脏擦干分装冷冻，鲜食冷藏 1 天。',
+    aliases: ['枪乌贼', 'squid']
+  },
+
+  // 蛋奶补充
+  {
+    name: '奶酪', emoji: '🧀', category: '奶制品', defaultUnit: 'g', defaultQuantity: 200,
+    options: [{ method: '冷藏', area: '冷藏区', days: 14, label: '冷藏 · 冷藏室中层' }],
+    freezable: true, tips: '密封冷藏，开封后尽快食用；硬奶酪可冷冻短期。',
+    aliases: ['芝士', 'cheese']
+  },
+
+  // 豆制品补充
+  {
+    name: '豆干', emoji: '🟫', category: '豆制品', defaultUnit: '块', defaultQuantity: 2,
+    options: [
+      { method: '冷藏', area: '冷藏区', days: 3, label: '冷藏 · 冷藏室中层' },
+      { method: '冷冻', area: '冷冻区', days: 30, label: '冷冻 · 冷冻室' }
+    ],
+    freezable: true, tips: '冷藏保存，尽快食用；卤制豆干更耐放。',
+    aliases: ['豆腐干', 'dried tofu']
+  },
+  {
+    name: '豆皮', emoji: '🟫', category: '豆制品', defaultUnit: '张', defaultQuantity: 5,
+    options: [{ method: '冷藏', area: '冷藏区', days: 2, label: '冷藏 · 冷藏室中层' }],
+    freezable: true, tips: '冷藏保存，焯水后可冷冻。',
+    aliases: ['千张', 'tofu skin', '豆腐皮']
+  },
+  {
+    name: '腐竹', emoji: '🟫', category: '豆制品', defaultUnit: '把', defaultQuantity: 1,
+    options: [{ method: '常温', area: '常温区', days: 30, label: '常温 · 阴凉干燥处' }],
+    freezable: false, tips: '干制品阴凉干燥处保存，泡发后尽快食用。',
+    aliases: ['yuba', 'tofu sticks', '豆腐竹']
+  },
+  {
+    name: '豆浆', emoji: '🥛', category: '豆制品', defaultUnit: '杯', defaultQuantity: 1,
+    options: [{ method: '冷藏', area: '冷藏区', days: 2, label: '冷藏 · 冷藏室中层' }],
+    freezable: false, tips: '冷藏保存，开封后当天喝完。',
+    aliases: ['豆奶', 'soy milk']
+  },
+
+  // 主食补充
+  {
+    name: '玉米', emoji: '🌽', category: '主食', defaultUnit: '根', defaultQuantity: 2,
+    options: [
+      { method: '常温', area: '常温区', days: 10, label: '常温 · 阴凉通风处' },
+      { method: '冷藏', area: '蔬果保鲜区', days: 5, label: '冷藏 · 蔬果保鲜区' }
+    ],
+    freezable: true, tips: '带壳常温通风；煮熟后可冷冻。',
+    aliases: ['玉米棒', 'corn']
+  },
+
+  // 调味及其他
+  {
+    name: '辣椒', emoji: '🌶️', category: '调味品', defaultUnit: '个', defaultQuantity: 3,
+    options: [
+      { method: '冷藏', area: '蔬果保鲜区', days: 7, label: '冷藏 · 蔬果保鲜区' },
+      { method: '常温', area: '常温区', days: 15, label: '常温 · 通风处' }
+    ],
+    freezable: true, tips: '擦干冷藏；干辣椒常温密封保存。',
+    aliases: ['干辣椒', 'chili', '红辣椒']
+  },
+  {
+    name: '花生', emoji: '🥜', category: '调味品', defaultUnit: '把', defaultQuantity: 1,
+    options: [{ method: '常温', area: '常温区', days: 60, label: '常温 · 阴凉干燥处' }],
+    freezable: true, tips: '带壳常温干燥处更耐放；去壳冷藏防哈喇。',
+    aliases: ['peanut', '花生米']
+  },
+  {
+    name: '芝麻', emoji: '🌰', category: '调味品', defaultUnit: 'g', defaultQuantity: 100,
+    options: [{ method: '常温', area: '常温区', days: 90, label: '常温 · 阴凉干燥处' }],
+    freezable: false, tips: '密封常温保存，避免受潮。',
+    aliases: ['sesame']
+  },
+
+  // 水果补充
+  {
+    name: '橘子', emoji: '🍊', category: '水果', defaultUnit: '个', defaultQuantity: 4,
+    options: [{ method: '冷藏', area: '蔬果保鲜区', days: 20, label: '冷藏 · 蔬果保鲜区' }],
+    freezable: false, tips: '单独存放，避免与叶菜混放加速老化。',
+    aliases: ['桔子', 'tangerine']
+  },
+  {
+    name: '西瓜', emoji: '🍉', category: '水果', defaultUnit: '块', defaultQuantity: 1,
+    options: [
+      { method: '常温', area: '常温区', days: 1, label: '常温 · 整瓜通风处' },
+      { method: '冷藏', area: '冷藏区', days: 3, label: '冷藏 · 冷藏室（切开的块）' }
+    ],
+    freezable: false, tips: '整瓜常温；切开后覆保鲜膜冷藏并尽快食用。',
+    aliases: ['watermelon']
+  },
+  {
+    name: '芒果', emoji: '🥭', category: '水果', defaultUnit: '个', defaultQuantity: 2,
+    options: [{ method: '冷藏', area: '蔬果保鲜区', days: 5, label: '冷藏 · 蔬果保鲜区' }],
+    freezable: true, tips: '硬果常温催熟，软后冷藏；易过敏注意。',
+    aliases: ['mango']
+  },
+  {
+    name: '火龙果', emoji: '🐉', category: '水果', defaultUnit: '个', defaultQuantity: 1,
+    options: [{ method: '冷藏', area: '蔬果保鲜区', days: 7, label: '冷藏 · 蔬果保鲜区' }],
+    freezable: false, tips: '冷藏保存，切开后尽快食用。',
+    aliases: ['pitaya', 'dragon fruit']
   }
 ]
 
