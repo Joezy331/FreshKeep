@@ -25,6 +25,8 @@ interface EditItem {
   recommendedDays: number
   areaOptions: StorageArea[]
   quickDays: number[]
+  /** 是否命中本地食材知识库（false → 未在库，需用户确认） */
+  known: boolean
 }
 
 const UNITS = ['个', '把', '根', '颗', '块', 'g', 'ml', 'kg', '份', '袋', '盒']
@@ -46,7 +48,8 @@ function emptyItem(): EditItem {
     adviceText: '待选择',
     recommendedDays: 5,
     areaOptions: AREA_BY_METHOD['冷藏'],
-    quickDays: [3, 5, 7]
+    quickDays: [3, 5, 7],
+    known: true
   }
 }
 
@@ -61,7 +64,9 @@ Page({
     areas: FRIDGE_ZONES.map((z: any) => z.area),
     image: '',
     disclaimer: DISCLAIMER,
-    editId: ''
+    editId: '',
+    provider: '',
+    fallback: false
   },
 
   onLoad(options: any) {
@@ -74,14 +79,24 @@ Page({
     this.setData({ mode, title: titles[mode] || '确认食材', foodNames: getAllFoodNames() })
 
     if (mode === 'confirm') {
-      const pending = get<{ items: RecognizedItem[]; image: string }>(KEYS.PENDING, null as any)
+      const pending = get<{
+        items: RecognizedItem[]
+        image: string
+        provider?: string
+        fallback?: boolean
+      }>(KEYS.PENDING, null as any)
       if (!pending || !pending.items || !pending.items.length) {
         toast('没有待确认的食材')
         setTimeout(() => wx.navigateBack(), 800)
         return
       }
       const items = pending.items.map((r) => this.fromRecognized(r))
-      this.setData({ items, image: pending.image || '' })
+      this.setData({
+        items,
+        image: pending.image || '',
+        provider: pending.provider || '',
+        fallback: !!pending.fallback
+      })
       wx.setNavigationBarTitle({ title: `发现 ${items.length} 种食材` })
     } else if (mode === 'edit') {
       const id = options.id
@@ -120,7 +135,8 @@ Page({
       areaOptions: AREA_BY_METHOD[r.storageMethod || advice.method],
       quickDays: [3, r.recommendedDays || advice.days, 7].filter(
         (v, i, a) => a.indexOf(v) === i
-      )
+      ),
+      known: r.known === false ? false : true
     }
   },
 
@@ -141,7 +157,8 @@ Page({
       adviceText: `建议${advice.method} · ${advice.area} · ${describeDays(advice.days)}`,
       recommendedDays: advice.days,
       areaOptions: AREA_BY_METHOD[ing.storageMethod],
-      quickDays: [3, advice.days, 7].filter((v, i, a) => a.indexOf(v) === i)
+      quickDays: [3, advice.days, 7].filter((v, i, a) => a.indexOf(v) === i),
+      known: true
     }
   },
 
@@ -165,9 +182,32 @@ Page({
   onName(e: any) {
     const idx = Number(e.currentTarget.dataset.idx)
     const items = (this as any).data.items as EditItem[]
-    items[idx] = { ...items[idx], name: (this as any).data.foodNames[e.detail.value] }
+    const chosen = (this as any).data.foodNames[e.detail.value]
+    const original = items[idx].name
+    items[idx] = { ...items[idx], name: chosen }
     this.setData({ items })
     this.refreshAdvice(idx, false)
+
+    // 识别候选相关埋点（仅确认流程）
+    if ((this as any).data.mode === 'confirm') {
+      track('recognition_candidate_selected', { from: 'confirm', chosen })
+      if (chosen !== original) {
+        track('recognition_name_corrected', {
+          from: 'confirm',
+          original,
+          corrected: chosen
+        })
+      }
+    }
+  },
+
+  /** 确认流程：移除某个不想要的候选（场景 B 去噪） */
+  removeCandidate(e: any) {
+    const idx = Number(e.currentTarget.dataset.idx)
+    const items = (this as any).data.items as EditItem[]
+    items.splice(idx, 1)
+    this.setData({ items })
+    wx.setNavigationBarTitle({ title: `发现 ${items.length} 种食材` })
   },
 
   onQty(e: any) {
@@ -271,6 +311,13 @@ Page({
         source: mode === 'confirm' ? 'ai' : 'manual'
       })
     })
+
+    if (mode === 'confirm') {
+      track('recognition_added_to_inventory', {
+        count: valid.length,
+        fallback: (this as any).data.fallback
+      })
+    }
 
     set(KEYS.PENDING, null)
     toast(`已加入冰箱 · ${valid.length} 种`, 'success')

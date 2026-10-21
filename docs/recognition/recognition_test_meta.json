@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-10-21T00:14:50.068Z",
+  "command": "node --experimental-strip-types --import ./tools/hooks.mjs tools/recognition-tests.mjs",
+  "environment": {
+    "node": "v22.22.2",
+    "platform": "win32",
+    "arch": "x64",
+    "cwd": "E:\\codex_projects\\Freshkeep"
+  },
+  "suites": {
+    "recognition_logic": {
+      "type": "unit-logic",
+      "pass": 17,
+      "fail": 0,
+      "total": 17
+    },
+    "recognition_api": {
+      "type": "real-api",
+      "executed": false,
+      "reason": "no-api-key"
+    }
+  },
+  "note": "归一化/候选构建/置信度/去重/降级判定为真实执行项目纯函数；真实模型调用因缺密钥未执行。"
+}

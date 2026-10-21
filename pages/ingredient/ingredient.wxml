@@ -35,7 +35,14 @@
         <view class="it-conf" wx:if="{{it.confidence > 0}}">
           识别置信度 {{it.confidence * 100}}%
         </view>
+        <view class="it-unknown" wx:if="{{it.known === false}}">未在知识库 · 请确认名称</view>
       </view>
+      <view
+        class="it-del"
+        wx:if="{{mode === 'confirm'}}"
+        data-idx="{{index}}"
+        bindtap="removeCandidate"
+      >✕</view>
     </view>
 
     <!-- 保存建议 -->

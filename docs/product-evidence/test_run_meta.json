@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-19T10:12:13.608Z",
+  "generatedAt": "2026-10-21T00:12:19.030Z",
   "command": "node --experimental-strip-types --import ./tools/hooks.mjs tools/product-evidence-tests.mjs",
   "environment": {
     "node": "v22.22.2",

@@ -138,4 +138,4 @@ export { isFreeModel, PRESET_MODELS } from './config'
 export function testConnection(): Promise<string> {
   return zenTestConnection()
 }
-export { MockVisionProvider, OpenCodeZenProvider }
+export { recognizeImage, MockVisionProvider, OpenCodeZenProvider }

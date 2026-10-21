@@ -1,8 +1,9 @@
 <view class="container">
   <button bindtap="takePhoto" type="primary">拍照识别食材</button>
   <image wx:if="{{imgSrc}}" src="{{imgSrc}}" mode="aspectFit" class="img"></image>
-  <view wx:if="{{result}}" class="info">
-    <text>识别食材：{{result}}</text>
-    <text>储存建议：{{tip}}</text>
+
+  <view wx:if="{{showManual}}" class="manual-box">
+    <view class="manual-tip">识别未成功，你也可以手动添加食材：</view>
+    <button bindtap="goManual" class="manual-btn" size="mini">手动输入食材</button>
   </view>
 </view>

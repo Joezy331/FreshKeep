@@ -14,6 +14,11 @@ export interface RecognizedItem {
   recommendedDays: number
   emoji: string
   tips: string
+  /**
+   * 是否命中本地食材知识库。
+   * known=false → 未收录，确认页应高亮提示用户校正确认（绝不静默强制映射）。
+   */
+  known?: boolean
 }
 
 export interface RecognitionResult {

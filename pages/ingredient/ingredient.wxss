@@ -101,6 +101,36 @@
   color: var(--fk-ink-300);
 }
 
+.it-unknown {
+  margin-top: 8rpx;
+  display: inline-block;
+  padding: 4rpx 14rpx;
+  border-radius: var(--fk-r-pill);
+  background: #fff4e5;
+  color: #c2550b;
+  font-size: 20rpx;
+  font-weight: 600;
+}
+
+.it-del {
+  margin-left: 16rpx;
+  width: 56rpx;
+  height: 56rpx;
+  border-radius: 50%;
+  background: var(--fk-fill);
+  color: var(--fk-ink-300);
+  font-size: 30rpx;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.it-del:active {
+  background: #fde2e2;
+  color: #d4380d;
+}
+
 .advice {
   margin: 0 24rpx;
   padding: 24rpx;
