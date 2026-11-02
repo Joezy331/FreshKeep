@@ -24,56 +24,96 @@ import type { RecognizedItem, RecognitionResult } from '../../services/ai/types'
 const MAX_BASE64_LEN = 4 * 1024 * 1024
 /** 百度菜品识别一次返回的候选数量 */
 const BAIDU_TOP_NUM = 3
+const BAIDU_TOKEN_URL = 'https://aip.baidubce.com/oauth/2.0/token'
+const BAIDU_DISH_URL = 'https://aip.baidubce.com/rest/2.0/image-classify/v2/dish'
 
-/** 调用百度菜品识别 → 候选食材数组（多候选，非 Top-1） */
+/** 把响应体统一成对象（wx.request 有时返回字符串，有时返回对象） */
+function safeJson(body: any): any {
+  if (body && typeof body === 'object') return body
+  if (typeof body === 'string') {
+    try { return JSON.parse(body) } catch { return null }
+  }
+  return null
+}
+
+/** 从百度返回里抽取可读错误原因，避免把鉴权/配额失败误判成「没认出来」 */
+function baiduErrorMessage(data: any, stage: 'token' | 'detect'): string {
+  if (!data) return stage === 'token' ? '百度鉴权无响应' : '百度识别无响应'
+  if (data.error_code || data.error_msg) {
+    return `百度${stage === 'token' ? '鉴权' : '识别'}失败：${data.error_msg || ''}（code ${data.error_code ?? '?'}，详见 aip.baidubce.com 错误码）`
+  }
+  if (data.error || data.error_description) {
+    return `百度鉴权失败：${data.error_description || data.error}`
+  }
+  return stage === 'token' ? '百度返回的令牌为空' : '百度返回格式异常'
+}
+
+/**
+ * 调用百度菜品识别 → 候选食材数组（多候选，非 Top-1）
+ * 关键点（修复「识别崩了」）：
+ *  - 整体 try/catch 兜底，任何异常都返回 RecognitionResult，绝不向上抛导致整页崩溃；
+ *  - 显式识别百度 error_code/error_msg，把「密钥失效 / 未开通 / 额度不足 / 格式异常」
+ *    如实回传，而不是静默降级成「没认出来」；
+ *  - 兼容 wx.request 返回字符串或对象两种 body；creds 做 URL 编码防特殊字符截断。
+ */
 async function baiduRecognize(
   tempPath: string,
+  base64: string,
   creds: { apiKey: string; secretKey: string }
 ): Promise<RecognitionResult> {
   const start = Date.now()
-  const tokenRes: any = await new Promise((resolve, reject) => {
-    wx.request({
-      url: `https://aip.baidubce.com/oauth/2.0/token?grant_type=client_credentials&client_id=${creds.apiKey}&client_secret=${creds.secretKey}`,
-      method: 'GET',
-      success: resolve,
-      fail: reject
-    })
-  })
-  const token = tokenRes && tokenRes.data && tokenRes.data.access_token
-  if (!token) throw new Error('BAIDU_TOKEN_FAILED')
-
-  const base64 = wx.getFileSystemManager().readFileSync(tempPath, 'base64') as string
-  const detectRes: any = await new Promise((resolve, reject) => {
-    wx.request({
-      url: `https://aip.baidubce.com/rest/2.0/image-classify/v2/dish?access_token=${token}`,
-      method: 'POST',
-      header: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      data: { image: base64, top_num: BAIDU_TOP_NUM },
-      success: resolve,
-      fail: reject
-    })
-  })
-
-  const resultArr =
-    detectRes && detectRes.data && Array.isArray(detectRes.data.result)
-      ? detectRes.data.result
-      : []
-  const items: RecognizedItem[] = buildCandidatesFromBaidu(resultArr)
-  if (!items.length) {
-    return {
-      success: false,
-      items: [],
-      error: '未能识别出菜品，换张更清晰的照片试试',
-      cost: Date.now() - start,
-      provider: 'Baidu 菜品识别'
-    }
-  }
-  return {
-    success: true,
-    items,
+  const fail = (error: string): RecognitionResult => ({
+    success: false,
+    items: [],
+    error,
     cost: Date.now() - start,
-    provider: 'Baidu 菜品识别',
-    raw: detectRes.data
+    provider: 'Baidu 菜品识别'
+  })
+
+  try {
+    // 1) 换取 access_token
+    const tokenRes: any = await new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BAIDU_TOKEN_URL}?grant_type=client_credentials&client_id=${encodeURIComponent(creds.apiKey)}&client_secret=${encodeURIComponent(creds.secretKey)}`,
+        method: 'GET',
+        success: resolve,
+        fail: reject
+      })
+    })
+    const tokenData = safeJson(tokenRes && tokenRes.data)
+    const token = tokenData && tokenData.access_token
+    if (!token) return fail(baiduErrorMessage(tokenData, 'token'))
+
+    // 2) 菜品识别
+    const detectRes: any = await new Promise((resolve, reject) => {
+      wx.request({
+        url: `${BAIDU_DISH_URL}?access_token=${token}`,
+        method: 'POST',
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' },
+        data: { image: base64, top_num: BAIDU_TOP_NUM },
+        success: resolve,
+        fail: reject
+      })
+    })
+    const detectData = safeJson(detectRes && detectRes.data)
+    if (!detectData || detectData.error_code || detectData.error) {
+      return fail(baiduErrorMessage(detectData, 'detect'))
+    }
+
+    const resultArr = Array.isArray(detectData.result) ? detectData.result : []
+    const items: RecognizedItem[] = buildCandidatesFromBaidu(resultArr)
+    if (!items.length) {
+      return fail('未能识别出菜品，换张更清晰的照片试试')
+    }
+    return {
+      success: true,
+      items,
+      cost: Date.now() - start,
+      provider: 'Baidu 菜品识别',
+      raw: detectData
+    }
+  } catch (e: any) {
+    return fail(`百度接口异常：${e && e.message ? e.message : '网络错误'}`)
   }
 }
 
@@ -93,7 +133,7 @@ Page({
         this.setData({ imgSrc: tempPath, showManual: false })
         track('ingredient_image_uploaded', { from: 'scan' })
 
-        // 图片大小守卫
+        // 图片大小守卫（这里读一次 base64，后续百度识别复用，避免重复读取大文件）
         const fs = wx.getFileSystemManager()
         const base64 = fs.readFileSync(tempPath, 'base64') as string
         if (typeof base64 === 'string' && base64.length > MAX_BASE64_LEN) {
@@ -112,7 +152,7 @@ Page({
           if (creds.apiKey && creds.secretKey) {
             // 通道 1：百度优先
             try {
-              result = await baiduRecognize(tempPath, creds)
+              result = await baiduRecognize(tempPath, base64, creds)
             } catch (e: any) {
               result = { success: false, items: [], error: '百度接口异常', provider: 'Baidu 菜品识别' }
             }
