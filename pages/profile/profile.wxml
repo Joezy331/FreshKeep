@@ -162,8 +162,8 @@
       </view>
 
       <view class="field">
-        <view class="field-label">模型</view>
-        <picker mode="selector" range="{{modelLabels}}" value="{{0}}" bindchange="onPickModel">
+        <view class="field-label">模型（已与 Cline 实时同步）</view>
+        <picker mode="selector" range="{{modelOptions}}" range-key="label" value="{{0}}" bindchange="onPickModel">
           <view class="field-value">{{ai.model}} ⌄</view>
         </picker>
       </view>
@@ -180,18 +180,6 @@
         <view class="dev" bindtap="onTestAi">测试连接</view>
         <view class="dev" bindtap="onFetchModels">拉取模型</view>
         <view class="dev" bindtap="onCustomModel">手输模型</view>
-      </view>
-
-      <view class="field" wx:if="{{fetchedModels.length > 0}}">
-        <view class="field-label">网关模型（{{fetchedModels.length}}）</view>
-        <picker
-          mode="selector"
-          range="{{fetchedModels}}"
-          value="{{0}}"
-          bindchange="onPickFetchedModel"
-        >
-          <view class="field-value">点击选择 ⌄</view>
-        </picker>
       </view>
 
       <view class="ai-status">{{aiStatus}}</view>

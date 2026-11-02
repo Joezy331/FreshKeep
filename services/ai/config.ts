@@ -116,3 +116,62 @@ export function fetchModelList(): Promise<string[]> {
     })
   })
 }
+
+/* ------------------------------------------------------------------ */
+/*  可用模型：与 Cline 网关实时同步                                       */
+/* ------------------------------------------------------------------ */
+/**
+ * Cline 网关的模型目录会**不定时更新**，所以「可用模型」不能写死。
+ * 这里把「从 Cline /models 拉到的 id」与内置 PRESET_MODELS 合并成统一选项，
+ * 拉取后缓存到本地；打开「我的 → AI 引擎」即静默重新同步，使设置项随 Cline 更新。
+ */
+/** 本地缓存键（不与主配置混用，单独版本演进） */
+export const AI_MODELS_CACHE_KEY = 'ai_models_cache'
+
+export interface ModelOption {
+  id: string
+  label: string
+  free: boolean
+}
+
+/** Cline 返回的模型 id 没有友好名时，转成可读 label 兜底 */
+function humanizeModelId(id: string): string {
+  return id
+    .replace(/\//g, ' / ')
+    .replace(/[-_]/g, ' ')
+    .replace(/\s+/g, ' ')
+    .trim()
+}
+
+/**
+ * 合并「Cline 实时列表」与「内置预设」为选项：
+ *  - 内置预设优先保留（带友好 label + 免费标记）；
+ *  - Cline 列表补齐（免费标记用 isFreeModel 兜底）；
+ *  - 去重、免费排前。
+ */
+export function toModelOptions(fetchedIds: string[]): ModelOption[] {
+  const byId = new Map<string, ModelOption>()
+  for (const m of PRESET_MODELS) byId.set(m.id, { id: m.id, label: m.label, free: !!m.free })
+  for (const id of fetchedIds || []) {
+    if (!id || byId.has(id)) continue
+    const preset = PRESET_MODELS.find((m) => m.id === id)
+    byId.set(id, {
+      id,
+      label: preset ? preset.label : `${humanizeModelId(id)}${isFreeModel(id) ? ' · 免费' : ''}`,
+      free: preset ? !!preset.free : isFreeModel(id)
+    })
+  }
+  return [...byId.values()].sort((a, b) => (a.free === b.free ? 0 : a.free ? -1 : 1))
+}
+
+/** 读取缓存的模型选项；无缓存时回退内置预设 */
+export function getCachedModelOptions(): ModelOption[] {
+  const cached = get<ModelOption[]>(AI_MODELS_CACHE_KEY, [])
+  if (cached && cached.length) return cached
+  return PRESET_MODELS.map((m) => ({ id: m.id, label: m.label, free: !!m.free }))
+}
+
+/** 写入缓存（Cline 更新后刷新此缓存，设置项即随之更新） */
+export function setCachedModelOptions(opts: ModelOption[]): void {
+  set(AI_MODELS_CACHE_KEY, opts)
+}

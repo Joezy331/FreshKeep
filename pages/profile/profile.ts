@@ -10,13 +10,14 @@ import {
   getAiConfig,
   saveAiConfig,
   fetchModelList,
-  isFreeModel,
-  PRESET_MODELS,
+  toModelOptions,
+  getCachedModelOptions,
+  setCachedModelOptions,
   BASE_PRESETS
 } from '../../services/ai/config'
 import { getBaiduCreds, saveBaiduCreds } from '../../services/baidu/config'
 import { testConnection } from '../../services/ai/opencode-zen'
-import type { AiConfig } from '../../services/ai/config'
+import type { AiConfig, ModelOption } from '../../services/ai/config'
 import type { UserProfile } from '../../types/user'
 
 const DISLIKES = ['不吃辣', '不吃香菜', '少油少盐', '素食为主', '不吃内脏', '不吃海鲜']
@@ -36,9 +37,9 @@ Page({
     initial: '鲜',
     /** AI 引擎配置 */
     ai: null as AiConfig | null,
-    modelLabels: PRESET_MODELS.map((m) => m.label),
+    /** 可用模型（已与 Cline 实时同步，含内置预设 + Cline 拉取列表） */
+    modelOptions: getCachedModelOptions() as any,
     basePresets: BASE_PRESETS,
-    fetchedModels: [] as string[],
     aiStatus: '尚未测试连接',
     version: '1.0.0',
     /** 管理员模式：仅管理员可见 AI 引擎 / 数据埋点 / 开发演示等内部选项 */
@@ -73,6 +74,37 @@ Page({
       isAdmin: get(KEYS.ADMIN, false),
       baidu: getBaiduCreds()
     })
+    // 打开设置即静默与 Cline 同步可用模型（Cline 会不定时更新模型目录）
+    this.refreshModelsFromCline(false)
+  },
+
+  /**
+   * 与 Cline 网关同步「可用模型」列表。
+   * - silent=true：静默刷新（onShow / 切换网关时调用），不打扰用户；
+   * - silent=false：带 loading + toast（点「拉取模型」时调用）。
+   * 成功后写入本地缓存，设置项里的可用模型随之更新；失败则保留上次缓存。
+   */
+  refreshModelsFromCline(silent: boolean) {
+    if (!silent) showLoading('拉取模型中')
+    fetchModelList()
+      .then((ids: string[]) => {
+        const opts = toModelOptions(ids)
+        setCachedModelOptions(opts)
+        this.setData({
+          modelOptions: opts,
+          aiStatus: `已与 Cline 同步：${opts.length} 个模型（免费 ${opts.filter((o) => o.free).length}）`
+        })
+        if (!silent) toast(`共 ${opts.length} 个模型`)
+      })
+      .catch((err: any) => {
+        if (!silent) {
+          this.setData({ aiStatus: `拉取失败：${(err && err.message) || '未知错误'}` })
+          toast('拉取失败，检查网络/地址')
+        }
+      })
+      .finally(() => {
+        if (!silent) hideLoading()
+      })
   },
 
   /**
@@ -136,13 +168,15 @@ Page({
     const ai = saveAiConfig({ baseUrl: url })
     this.setData({
       ai,
-      aiStatus: `已切换网关：${url}，记得确认模型 ID 属于该网关`
+      aiStatus: `已切换网关：${url}，正在同步该网关可用模型…`
     })
+    this.refreshModelsFromCline(false)
   },
 
   onBaseUrl(e: any) {
     const ai = saveAiConfig({ baseUrl: (e.detail.value || '').trim() })
     this.setData({ ai })
+    this.refreshModelsFromCline(false)
   },
 
   onAiFallback(e: any) {
@@ -152,7 +186,8 @@ Page({
 
   onPickModel(e: any) {
     const idx = Number(e.detail.value)
-    const hit = PRESET_MODELS[idx]
+    const opts = (this as any).data.modelOptions as ModelOption[]
+    const hit = opts[idx]
     if (!hit) return
     const ai = saveAiConfig({ model: hit.id })
     this.setData({
@@ -161,35 +196,8 @@ Page({
     })
   },
 
-  onPickFetchedModel(e: any) {
-    const idx = Number(e.detail.value)
-    const id = (this as any).data.fetchedModels[idx]
-    if (!id) return
-    const ai = saveAiConfig({ model: id })
-    this.setData({
-      ai,
-      aiStatus: `已选择模型：${id}${isFreeModel(id) ? '（免费）' : ''}`
-    })
-  },
-
   onFetchModels() {
-    showLoading('拉取模型中')
-    fetchModelList()
-      .then((ids: string[]) => {
-        hideLoading()
-        // 免费模型排前面
-        const sorted = [...ids].sort((a, b) => (isFreeModel(a) === isFreeModel(b) ? 0 : isFreeModel(a) ? -1 : 1))
-        this.setData({
-          fetchedModels: sorted.slice(0, 60),
-          aiStatus: `已拉取 ${ids.length} 个模型，免费 ${ids.filter(isFreeModel).length} 个`
-        })
-        toast(`共 ${ids.length} 个模型`)
-      })
-      .catch((err: any) => {
-        hideLoading()
-        this.setData({ aiStatus: `拉取失败：${(err && err.message) || '未知错误'}` })
-        toast('拉取失败，检查网络/地址')
-      })
+    this.refreshModelsFromCline(true)
   },
 
   onCustomModel() {
